@@ -11,11 +11,10 @@ import { BottomScrim } from "@/components/ui/BottomScrim";
  * language for "large, held" photography moments) rather than introducing
  * a new visual pattern.
  *
- * No literal "people cooking in a kitchen" photo exists in the asset
- * library (checked directly — see docs/asset-library.md §6). This uses the
- * closest genuine match found: a candlelit group dinner, seven people,
- * mid-conversation. Flagged for Mathieu to confirm this is the right image,
- * or to supply a stronger one if he has a specific photo in mind.
+ * Image confirmed 2026-08-14 per Mathieu Bonnier's feedback: this section
+ * must show the human experience, not the place — he specifically asked
+ * for people cooking, the table, a shared meal, or another genuine group
+ * moment. A candlelit group dinner, seven people, mid-conversation.
  */
 export function HumanExperience() {
   return (
@@ -52,3 +51,5 @@ export function HumanExperience() {
     </section>
   );
 }
+
+

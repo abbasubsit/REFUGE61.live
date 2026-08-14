@@ -2,8 +2,6 @@ export type GalleryImage = {
   id: string;
   src: string;
   alt: string;
-  /** Occupies the 2-column x 2-row anchor position in the grid. Exactly one entry should set this. */
-  large?: boolean;
 };
 
 /**
@@ -14,13 +12,18 @@ export type GalleryImage = {
  * the week: skiing together, cooking outdoors, an evening aurora over the
  * lit cabin. Kept the aerial (the only wide establishing shot in the set)
  * and the sunset ski-track landscape (a "journey," not a building).
+ *
+ * Revised again 2026-08-14 per his second round of feedback: roughly half
+ * nature/lodge, half people/movement/shared-moment, still true of this set
+ * (aerial-sunrise, aurora-evening and ski-touring-sunset are place; ski-group,
+ * outdoor-cooking and ski-touring-portrait are people). The mosaic/large-tile
+ * layout was dropped — see Gallery.tsx — so `large` no longer applies.
  */
 export const GALLERY_IMAGES: GalleryImage[] = [
   {
     id: "aerial-sunrise",
     src: "/images/gallery/gallery-01-aerial-sunrise.jpg",
     alt: "Aerial view of the REFUGE61 estate at sunrise, surrounded by snow.",
-    large: true,
   },
   {
     id: "ski-group",

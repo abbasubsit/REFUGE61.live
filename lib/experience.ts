@@ -29,7 +29,7 @@ export const EXPERIENCE_PILLARS: ExperiencePillar[] = [
   {
     id: "reset",
     label: "Reset",
-    image: "/images/architecture/architecture-bathhouse-exterior-01.jpg",
+    image: "/images/lifestyle/lifestyle-iphone-13.jpg",
     alt: "The REFUGE61 bathhouse, a stone-and-glass building set in snow.",
   },
 ];

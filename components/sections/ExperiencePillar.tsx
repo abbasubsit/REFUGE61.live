@@ -4,31 +4,38 @@ import type { ExperiencePillar as ExperiencePillarData } from "@/lib/experience"
 
 type ExperiencePillarProps = {
   pillar: ExperiencePillarData;
-  delayMs: number;
+  reverse: boolean;
 };
 
 /**
- * Static — no hover-scale, no click target (homepage-spec.md §5: this
- * section is looked at, not clicked through; Gallery Preview is the
- * section with an interactive cue). Image and its single-word label are
- * the entire statement — no supporting sentence.
+ * Revised 2026-08-14 per Mathieu Bonnier's feedback: the three pillars no
+ * longer sit side by side as a three-up mosaic — his opening principle
+ * ("remove the mosaics, the three-small-images layouts") names this exact
+ * pattern. Each pillar is now its own full-width image/text split, same
+ * proportions as Philosophy, alternating sides so the page keeps reading
+ * image-left/text-right, then text-left/image-right as it scrolls. Image
+ * and its single-word label are still the entire statement — no supporting
+ * sentence added.
  */
-export function ExperiencePillar({ pillar, delayMs }: ExperiencePillarProps) {
+export function ExperiencePillar({ pillar, reverse }: ExperiencePillarProps) {
   return (
-    <RevealOnScroll variant="fade-rise" durationMs={600} delayMs={delayMs}>
-      <div>
-        <div className="relative aspect-[4/5] w-full overflow-hidden bg-cream">
+    <RevealOnScroll variant="fade-rise" durationMs={700}>
+      <div className={`flex flex-col md:flex-row ${reverse ? "md:flex-row-reverse" : ""}`}>
+        <div className="relative aspect-[4/5] w-full md:aspect-auto md:w-[55%]">
           <Image
             src={pillar.image}
             alt={pillar.alt}
             fill
-            sizes="(min-width: 768px) 33vw, 100vw"
+            sizes="(min-width: 768px) 55vw, 100vw"
             className="object-cover"
           />
         </div>
-        <h3 className="mt-space-3 text-eyebrow uppercase tracking-[0.12em] text-charcoal">
-          {pillar.label}
-        </h3>
+
+        <div className="flex w-full flex-col justify-center px-space-4 py-space-12 md:w-[45%] md:px-space-8 md:py-space-20 lg:px-space-12">
+          <h3 className="font-display text-display-m uppercase tracking-wide text-charcoal">
+            {pillar.label}
+          </h3>
+        </div>
       </div>
     </RevealOnScroll>
   );

@@ -38,17 +38,14 @@ export function Hero() {
           <h1 className="animate-fade-rise font-display text-display-m text-snow [animation-delay:200ms] motion-reduce:animate-none md:text-display-l lg:text-display-xl">
             A refuge above the treeline
           </h1>
-          {/* PLACEHOLDER COPY — needs Mathieu's confirmation (2026-08-07 feedback):
-              "reimagined" removed (REFUGE61 didn't invent this place); this
-              gestures at continuity/authenticity instead, but the specific
-              framing ("old", "still lived in") is a guess, not a fact he's
-              confirmed. Replace once he approves the actual history/wording. */}
+          {/* Copy confirmed 2026-08-14 per Mathieu Bonnier's feedback on the
+              first build — replaces the earlier placeholder sub-line. */}
           <p className="mt-space-2 max-w-md animate-fade-rise text-body-l text-snow/85 [animation-delay:400ms] motion-reduce:animate-none">
-            An old hunting lodge, still lived in — shared for a week.
+            A remote Norwegian lodge. One week. A small group. Nature, movement and shared life.
           </p>
           <div className="mt-space-4 animate-fade-rise [animation-delay:550ms] motion-reduce:animate-none">
             <Button href="#philosophy" variant="ghost">
-              Discover the Estate
+              Discover REFUGE61
             </Button>
           </div>
         </div>

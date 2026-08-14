@@ -42,9 +42,9 @@ export function Philosophy() {
               Better shared than admired.
             </h2>
             <p className="mt-space-4 max-w-[42ch] text-body-l text-charcoal/80">
-              REFUGE61 sits above the treeline for those who come
-              together — moving through the mountain by day, gathering
-              back around the table by night.
+              REFUGE61 sits above the treeline for those who come to move
+              through the mountains by day and gather around the table by
+              night.
             </p>
           </div>
         </div>
