@@ -2,16 +2,22 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Logo } from "@/components/ui/Logo";
 import { Container } from "@/components/ui/Container";
 import { NavLink } from "./NavLink";
 import { LanguageSelector } from "./LanguageSelector";
 import { MobileMenu } from "./MobileMenu";
 import { NAV_ITEMS } from "@/lib/navigation";
+import type { NavItem, OfficialLogo } from "@/lib/navigation";
 
 type NavigationProps = {
   isMenuOpen: boolean;
   onMenuOpenChange: (open: boolean) => void;
+  /** Defaults to NAV_ITEMS when omitted — see SiteShell. */
+  navItems?: NavItem[];
+  /** Defaults to the placeholder <Logo> SVG when omitted — see SiteShell. */
+  officialLogo?: OfficialLogo;
 };
 
 // homepage-spec.md §9 — "hard color-swap (not crossfade) once scrolled past
@@ -21,7 +27,12 @@ type NavigationProps = {
 // from mobile browser-chrome rounding, without needing a ref into Hero's DOM.
 const SOLID_THRESHOLD_RATIO = 0.95;
 
-export function Navigation({ isMenuOpen, onMenuOpenChange }: NavigationProps) {
+export function Navigation({
+  isMenuOpen,
+  onMenuOpenChange,
+  navItems = NAV_ITEMS,
+  officialLogo,
+}: NavigationProps) {
   const [isSolid, setIsSolid] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
 
@@ -62,11 +73,22 @@ export function Navigation({ isMenuOpen, onMenuOpenChange }: NavigationProps) {
           aria-label="REFUGE61 — back to top"
           className={`shrink-0 transition-opacity duration-200 ease-editorial hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 ${ringClass}`}
         >
-          <Logo className="h-6 w-auto md:h-7" />
+          {officialLogo ? (
+            <Image
+              src={isSolid ? officialLogo.solid.src : officialLogo.transparent.src}
+              alt={officialLogo.alt}
+              width={isSolid ? officialLogo.solid.width : officialLogo.transparent.width}
+              height={isSolid ? officialLogo.solid.height : officialLogo.transparent.height}
+              priority
+              className="h-6 w-auto md:h-7"
+            />
+          ) : (
+            <Logo className="h-6 w-auto md:h-7" />
+          )}
         </Link>
 
         <nav aria-label="Primary" className="hidden items-center gap-space-6 md:flex">
-          {NAV_ITEMS.map((item) => (
+          {navItems.map((item) => (
             <NavLink
               key={item.href}
               href={item.href}
@@ -110,7 +132,7 @@ export function Navigation({ isMenuOpen, onMenuOpenChange }: NavigationProps) {
       <MobileMenu
         isOpen={isMenuOpen}
         onClose={() => onMenuOpenChange(false)}
-        items={NAV_ITEMS}
+        items={navItems}
         triggerRef={menuButtonRef}
       />
     </header>

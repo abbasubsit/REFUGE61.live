@@ -2,9 +2,18 @@
 
 import { useState } from "react";
 import { Navigation } from "./Navigation";
+import type { NavItem, OfficialLogo } from "@/lib/navigation";
 
 type SiteShellProps = {
   children: React.ReactNode;
+  /** Defaults to the sitewide NAV_ITEMS (see Navigation) when omitted — only
+   *  Version 4 (different section set: no Gallery, an Expedition section
+   *  instead) passes its own, so / , /v2 and /v3 are unaffected. */
+  navItems?: NavItem[];
+  /** Defaults to the placeholder <Logo> SVG when omitted — only Version 4
+   *  passes the client's official logo files, so every other version's
+   *  header is untouched. */
+  officialLogo?: OfficialLogo;
 };
 
 /**
@@ -15,7 +24,7 @@ type SiteShellProps = {
  * until the menu closes — a stronger guarantee than the conditional-render
  * + focus-trap in MobileMenu alone.
  */
-export function SiteShell({ children }: SiteShellProps) {
+export function SiteShell({ children, navItems, officialLogo }: SiteShellProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -26,7 +35,12 @@ export function SiteShell({ children }: SiteShellProps) {
       >
         Skip to content
       </a>
-      <Navigation isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen} />
+      <Navigation
+        isMenuOpen={isMenuOpen}
+        onMenuOpenChange={setIsMenuOpen}
+        navItems={navItems}
+        officialLogo={officialLogo}
+      />
       {/* tabIndex={-1}: not part of the normal Tab order, but focusable by
           the skip link above so focus actually moves, not just scroll. */}
       <main id="top" tabIndex={-1} inert={isMenuOpen} className="focus:outline-none">
