@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { Logo } from "@/components/ui/Logo";
 import { Container } from "@/components/ui/Container";
 import { NavLink } from "./NavLink";
@@ -18,6 +19,16 @@ type NavigationProps = {
   navItems?: NavItem[];
   /** Defaults to the placeholder <Logo> SVG when omitted — see SiteShell. */
   officialLogo?: OfficialLogo;
+  /**
+   * Skips the scroll-triggered transparent-over-Hero state and renders the
+   * solid (bg-snow/text-charcoal) surface from the start. The transparent
+   * state assumes a full-viewport dark image sits behind the nav at the
+   * top of the page (true for every Hero-led homepage) — pages that open
+   * with plain bg-snow content instead (e.g. /practical-information) would
+   * otherwise show white nav text on a near-white background. Defaults to
+   * false, so every existing page's behaviour is unchanged.
+   */
+  alwaysSolid?: boolean;
 };
 
 // homepage-spec.md §9 — "hard color-swap (not crossfade) once scrolled past
@@ -32,15 +43,18 @@ export function Navigation({
   onMenuOpenChange,
   navItems = NAV_ITEMS,
   officialLogo,
+  alwaysSolid = false,
 }: NavigationProps) {
-  const [isSolid, setIsSolid] = useState(false);
+  const [hasScrolledPastHero, setHasScrolledPastHero] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
+    if (alwaysSolid) return;
     let frame = 0;
 
     const evaluate = () => {
-      setIsSolid(window.scrollY > window.innerHeight * SOLID_THRESHOLD_RATIO);
+      setHasScrolledPastHero(window.scrollY > window.innerHeight * SOLID_THRESHOLD_RATIO);
     };
 
     const handleScrollOrResize = () => {
@@ -56,7 +70,9 @@ export function Navigation({
       window.removeEventListener("resize", handleScrollOrResize);
       cancelAnimationFrame(frame);
     };
-  }, []);
+  }, [alwaysSolid]);
+
+  const isSolid = alwaysSolid || hasScrolledPastHero;
 
   // No `transition-colors` here — the spec calls for an instant swap, not
   // an animated crossfade, once the threshold is crossed.
@@ -74,29 +90,56 @@ export function Navigation({
           className={`shrink-0 transition-opacity duration-200 ease-editorial hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 ${ringClass}`}
         >
           {officialLogo ? (
-            <Image
-              src={isSolid ? officialLogo.solid.src : officialLogo.transparent.src}
-              alt={officialLogo.alt}
-              width={isSolid ? officialLogo.solid.width : officialLogo.transparent.width}
-              height={isSolid ? officialLogo.solid.height : officialLogo.transparent.height}
-              priority
-              className="h-6 w-auto md:h-7"
-            />
+            // Both files stay mounted and are toggled by opacity rather than
+            // swapping `src`: swapping meant the solid-state logo only began
+            // downloading at the moment the user scrolled past the hero,
+            // leaving a visibly empty logo slot for a beat. The hidden one is
+            // aria-hidden so assistive tech sees a single mark.
+            <span className="relative block h-6 w-auto md:h-7">
+              <Image
+                src={officialLogo.transparent.src}
+                alt={officialLogo.alt}
+                width={officialLogo.transparent.width}
+                height={officialLogo.transparent.height}
+                priority
+                className={`h-6 w-auto md:h-7 ${isSolid ? "invisible" : "visible"}`}
+              />
+              <Image
+                src={officialLogo.solid.src}
+                alt=""
+                aria-hidden="true"
+                width={officialLogo.solid.width}
+                height={officialLogo.solid.height}
+                priority
+                className={`absolute inset-0 h-6 w-auto md:h-7 ${
+                  isSolid ? "visible" : "invisible"
+                }`}
+              />
+            </span>
           ) : (
             <Logo className="h-6 w-auto md:h-7" />
           )}
         </Link>
 
         <nav aria-label="Primary" className="hidden items-center gap-space-6 md:flex">
-          {navItems.map((item) => (
-            <NavLink
-              key={item.href}
-              href={item.href}
-              className={`text-eyebrow uppercase tracking-[0.12em] ${ringClass}`}
-            >
-              {item.label}
-            </NavLink>
-          ))}
+          {navItems.map((item) => {
+            // Only real routes (not same-page "#section" anchors) can ever
+            // match the current pathname, so this is a no-op for every
+            // Hero-led homepage's anchor nav.
+            const isActive = item.href.startsWith("/") && pathname === item.href;
+            return (
+              <NavLink
+                key={item.href}
+                href={item.href}
+                aria-current={isActive ? "page" : undefined}
+                className={`text-eyebrow uppercase tracking-[0.12em] ${ringClass} ${
+                  isActive ? "[&>span]:scale-x-100" : ""
+                }`}
+              >
+                {item.label}
+              </NavLink>
+            );
+          })}
           <LanguageSelector className={ringClass} />
         </nav>
 

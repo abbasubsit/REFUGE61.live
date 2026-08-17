@@ -1,22 +1,40 @@
 import Image from "next/image";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
-import type { PillarV4 } from "@/lib/pillarsV4";
+
+export type PillarContent = {
+  id: string;
+  eyebrow: string;
+  headline: string;
+  body: string;
+  image: string;
+  alt: string;
+};
 
 type PillarSectionProps = {
-  pillar: PillarV4;
+  pillar: PillarContent;
   reverse: boolean;
+  /** "h3" (default) matches Version 4, where each pillar nests under its own
+   *  sr-only h2 wrapper. Pages with no such wrapper (e.g. /practical-information,
+   *  where each section sits directly under the page's own h1) should pass "h2". */
+  headingLevel?: "h2" | "h3";
 };
 
 /**
- * Version 4 only — one image + one text column, alternating sides, used for
- * Move / Gather / Reset / Expedition. The image column intentionally reuses
- * Philosophy's exact proportions (`aspect-[4/5]` / `md:w-[55%]`, same
- * padding scale on the text side) per Mathieu Bonnier's explicit instruction
- * that every section should match "Better shared than admired"'s image size
- * — one consistent visual rhythm across the page, not a different photo
- * shape per section.
+ * One image + one text column, alternating sides. Built for Version 4's
+ * Move/Gather/Reset/Expedition (lib/pillarsV4.ts) and reused as-is by
+ * /practical-information (lib/practicalInfo.ts) — both data sources satisfy
+ * PillarContent structurally, so this component doesn't need to know which
+ * page is using it. The image column intentionally reuses Philosophy's
+ * exact proportions (`aspect-[4/5]` / `md:w-[55%]`, same padding scale on
+ * the text side) per Mathieu Bonnier's explicit instruction that every
+ * section should match "Better shared than admired"'s image size — one
+ * consistent visual rhythm across the whole site, not a different photo
+ * shape per section or per page.
  */
-export function PillarSection({ pillar, reverse }: PillarSectionProps) {
+export function PillarSection({ pillar, reverse, headingLevel = "h3" }: PillarSectionProps) {
+  const Heading = headingLevel;
+  const paragraphs = pillar.body.split(/\n\n+/);
+
   return (
     <RevealOnScroll variant="fade" durationMs={800}>
       <div
@@ -37,12 +55,19 @@ export function PillarSection({ pillar, reverse }: PillarSectionProps) {
           <p className="text-eyebrow uppercase tracking-[0.12em] text-charcoal/60">
             {pillar.eyebrow}
           </p>
-          <h3 className="mt-space-3 max-w-[18ch] font-display text-display-m italic text-charcoal">
+          <Heading className="mt-space-3 max-w-[18ch] font-display text-display-m italic text-charcoal">
             {pillar.headline}
-          </h3>
-          <p className="mt-space-4 max-w-[42ch] text-body-l text-charcoal/80">
-            {pillar.body}
-          </p>
+          </Heading>
+          {paragraphs.map((paragraph, index) => (
+            <p
+              key={index}
+              className={`max-w-[42ch] text-body-l text-charcoal/80 ${
+                index === 0 ? "mt-space-4" : "mt-space-3"
+              }`}
+            >
+              {paragraph}
+            </p>
+          ))}
         </div>
       </div>
     </RevealOnScroll>

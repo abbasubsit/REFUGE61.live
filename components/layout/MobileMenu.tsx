@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 import { NavLink } from "./NavLink";
 import { LanguageSelector } from "./LanguageSelector";
 import type { NavItem } from "@/lib/navigation";
@@ -22,6 +23,7 @@ type MobileMenuProps = {
  */
 export function MobileMenu({ isOpen, onClose, items, triggerRef }: MobileMenuProps) {
   const panelRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     if (!isOpen) return;
@@ -78,16 +80,22 @@ export function MobileMenu({ isOpen, onClose, items, triggerRef }: MobileMenuPro
       className="fixed inset-0 z-40 flex animate-fade-rise flex-col items-center justify-center gap-space-8 bg-snow motion-reduce:animate-none"
     >
       <nav aria-label="Mobile" className="flex flex-col items-center gap-space-6">
-        {items.map((item) => (
-          <NavLink
-            key={item.href}
-            href={item.href}
-            onClick={onClose}
-            className="text-heading-s text-charcoal focus-visible:ring-forest focus-visible:ring-offset-2 focus-visible:ring-offset-snow"
-          >
-            {item.label}
-          </NavLink>
-        ))}
+        {items.map((item) => {
+          const isActive = item.href.startsWith("/") && pathname === item.href;
+          return (
+            <NavLink
+              key={item.href}
+              href={item.href}
+              onClick={onClose}
+              aria-current={isActive ? "page" : undefined}
+              className={`text-heading-s text-charcoal focus-visible:ring-forest focus-visible:ring-offset-2 focus-visible:ring-offset-snow ${
+                isActive ? "[&>span]:scale-x-100" : ""
+              }`}
+            >
+              {item.label}
+            </NavLink>
+          );
+        })}
       </nav>
       <LanguageSelector className="text-charcoal focus-visible:ring-forest focus-visible:ring-offset-2 focus-visible:ring-offset-snow" />
     </div>

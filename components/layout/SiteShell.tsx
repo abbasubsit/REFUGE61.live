@@ -14,6 +14,14 @@ type SiteShellProps = {
    *  passes the client's official logo files, so every other version's
    *  header is untouched. */
   officialLogo?: OfficialLogo;
+  /** Defaults to false (scroll-triggered transparent-over-Hero) — see
+   *  Navigation. Only pages with no full-viewport dark opener (e.g.
+   *  /practical-information) need to pass true. */
+  alwaysSolid?: boolean;
+  /** Rendered as a sibling after </main>, not inside it — footer content
+   *  belongs outside the main landmark. Omitted by default (no page had a
+   *  footer before /practical-information). */
+  footer?: React.ReactNode;
 };
 
 /**
@@ -24,7 +32,13 @@ type SiteShellProps = {
  * until the menu closes — a stronger guarantee than the conditional-render
  * + focus-trap in MobileMenu alone.
  */
-export function SiteShell({ children, navItems, officialLogo }: SiteShellProps) {
+export function SiteShell({
+  children,
+  navItems,
+  officialLogo,
+  alwaysSolid,
+  footer,
+}: SiteShellProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -40,12 +54,14 @@ export function SiteShell({ children, navItems, officialLogo }: SiteShellProps) 
         onMenuOpenChange={setIsMenuOpen}
         navItems={navItems}
         officialLogo={officialLogo}
+        alwaysSolid={alwaysSolid}
       />
       {/* tabIndex={-1}: not part of the normal Tab order, but focusable by
           the skip link above so focus actually moves, not just scroll. */}
       <main id="top" tabIndex={-1} inert={isMenuOpen} className="focus:outline-none">
         {children}
       </main>
+      {footer}
     </>
   );
 }
