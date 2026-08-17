@@ -13,18 +13,21 @@ export type PillarV4 = {
  * from lib/experience.ts (still used by Version 2 and 3's single-word
  * pillars) so this content can't collide with or drift into those versions.
  *
- * Image choices all follow his new sitewide rule: no identifiable faces.
- * Move and Reset were already face-free (distant skier; empty terrace).
- * Gather keeps lifestyle-rush-06.jpg — already cropped to hands/table, the
- * one partially visible face is angled down and blurred, not identifiable —
- * rather than lifestyle-family-14.jpg (outdoor group cooking), whose faces
- * are clearly recognisable. No literal "potatoes and vegetables" / food-prep
- * photo exists anywhere in the asset library (confirmed directly against
- * docs/asset-library.md §7, which already flagged this same gap) — flagged
- * back to Mathieu rather than guessing with an unrelated image. Expedition
- * uses lifestyle-rush-08.jpg (a tent glowing at dusk in a snow bowl, ski
- * track leading in) — no people in frame at all, and distinct in mood from
- * every other image on the page.
+ * Image choices all follow his sitewide rule: no identifiable faces.
+ * Move and Reset are face-free (distant skier; empty terrace). Expedition
+ * uses lifestyle-rush-08.jpg (a tent glowing at dusk in a snow bowl) — no
+ * people in frame at all, and distinct in mood from every other image here.
+ *
+ * Gather answers his "USE PICTURES WITH POTATOES AND VEGETABLES" note
+ * directly (2026-08-16, source supplied by Mathieu:
+ * "RUSH MISUSAETER/D8722791-...heic"). That file shipped into public/ as
+ * lifestyle-rush-09.heic and was never usable — HEIC doesn't render in
+ * browsers, a gap docs/asset-library.md §11 already flagged — so it was
+ * converted to lifestyle-rush-09-vegetables.jpg for web use. It happens to
+ * satisfy both of his requirements at once: a group peeling potatoes,
+ * carrots, parsnips and beetroot together, framed above the shoulders so
+ * no face is visible. Replaces lifestyle-rush-06.jpg (the card game),
+ * which stays in the library and is still used by Version 2/3.
  */
 export const PILLARS_V4: PillarV4[] = [
   {
@@ -40,8 +43,8 @@ export const PILLARS_V4: PillarV4[] = [
     eyebrow: "Gather",
     headline: "Come back together.",
     body: "Life at REFUGE61 happens around the table. We cook together, share the meal, open a bottle, talk and laugh. There is no staff behind the scenes — everyone takes part in making the house come alive.",
-    image: "/images/lifestyle/lifestyle-rush-06.jpg",
-    alt: "Friends playing a card game together around a wooden table, faces out of frame.",
+    image: "/images/lifestyle/lifestyle-rush-09-vegetables.jpg",
+    alt: "Several people peeling potatoes, carrots and parsnips together along a kitchen counter, photographed from the shoulders down.",
   },
   {
     id: "reset",
