@@ -31,9 +31,9 @@ export const HEADER_LOGO_V4: OfficialLogo = {
   // neutral black/stone options, so the mark reads as a deliberate brand
   // colour, not just "dark text."
   solid: {
-    src: "/logos/refuge61-logo-header-forest-green.png",
-    width: 736,
-    height: 186,
+    src: "/logos/refuge61-logo-header-forest-transparent.png",
+    width: 1062,
+    height: 221,
   },
   alt: "REFUGE61",
 };
@@ -47,8 +47,8 @@ export const HEADER_LOGO_V4: OfficialLogo = {
  * colour on one page.
  */
 export const FULL_LOGO_V4 = {
-  src: "/logos/refuge61-logo-full-forest-green.png",
-  width: 735,
-  height: 186,
+  src: "/logos/refuge61-logo-full-forest-transparent.png",
+  width: 1092,
+  height: 370,
   alt: "REFUGE61 — Back to Basics",
 };

@@ -1,14 +1,37 @@
 import type { Metadata } from "next";
+import { SiteShell } from "@/components/layout/SiteShell";
+import { SiteFooter } from "@/components/layout/SiteFooter";
+import { Hero } from "@/components/sections/Hero";
+import { Philosophy } from "@/components/sections/Philosophy";
+import { Experience } from "@/components/sections/Experience";
+import { HumanExperience } from "@/components/sections/HumanExperience";
+import { CinematicVideo } from "@/components/sections/CinematicVideo";
+import { Gallery } from "@/components/sections/Gallery";
+import { Contact } from "@/components/sections/Contact";
 
-// Version 2 — explicit, stable URL for the homepage as built from Mathieu
-// Bonnier's feedback (2026-08-14): alternating image/text sections, no
-// mosaics, static-image Hero. Re-exports the root page's component directly
-// rather than duplicating its JSX, so /v2 and / can never drift apart by
-// accident. This file must never import from v3 or be edited to diverge —
-// Version 3 (app/v3/page.tsx) is a separate composition specifically so
-// changes there can't touch this one.
+// Version 2 — the earlier homepage composition. Was previously a re-export of
+// app/page.tsx; inlined here 2026-08-22 when /v4 became the live homepage, so
+// that changing the root can no longer alter this version.
 export const metadata: Metadata = {
   title: "REFUGE61 — Version 2",
 };
 
-export { default } from "../page";
+
+// Section order revised 2026-08-07 per Mathieu Bonnier's feedback: the new
+// HumanExperience section sits between Move/Gather/Reset and the Cinematic
+// Video, so the page reaches its emotional peak (people, living together)
+// before its widest establishing shot (the video's aerial "place" footage)
+// and the Gallery. Experience before accommodation, throughout.
+export default function HomeV2() {
+  return (
+    <SiteShell footer={<SiteFooter />}>
+      <Hero />
+      <Philosophy />
+      <Experience />
+      <HumanExperience />
+      <CinematicVideo />
+      <Gallery />
+      <Contact />
+    </SiteShell>
+  );
+}

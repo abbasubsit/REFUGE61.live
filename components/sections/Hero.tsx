@@ -21,7 +21,7 @@ export function Hero() {
     >
       <div className="absolute inset-0 animate-hero-image motion-reduce:animate-none">
         <Image
-          src="/images/hero/hero-bw-frost-facade.jpg"
+          src="/images/hero/hero.png"
           alt="Frost-covered carved timber facade of the REFUGE61 lodge, photographed in black and white."
           fill
           priority
@@ -35,18 +35,16 @@ export function Hero() {
 
       <div className="relative flex h-full flex-col justify-end px-space-4 pb-space-12 md:px-space-6 md:pb-space-16 lg:px-space-8">
         <div className="max-w-3xl">
-          <h1 className="animate-fade-rise font-display text-display-m text-snow [animation-delay:200ms] motion-reduce:animate-none md:text-display-l lg:text-display-xl">
+          <h1 className="animate-fade-rise font-display text-display-m text-snow drop-shadow-[0_3px_8px_rgba(0,0,0,0.65)] [animation-delay:200ms] motion-reduce:animate-none md:text-display-l lg:text-display-xl">
             A refuge above the treeline
           </h1>
           {/* Copy confirmed 2026-08-14 per Mathieu Bonnier's feedback on the
               first build — replaces the earlier placeholder sub-line. */}
-          <p className="mt-space-2 max-w-md animate-fade-rise text-body-l text-snow/85 [animation-delay:400ms] motion-reduce:animate-none">
+          <p className="mt-space-2 max-w-md animate-fade-rise text-body-ltext-snow drop-shadow-[0_3px_8px_rgba(0,0,0,0.65)] [animation-delay:200ms] [animation-delay:400ms] motion-reduce:animate-none">
             A remote Norwegian lodge. One week. A small group. Nature, movement and shared life.
           </p>
           <div className="mt-space-4 animate-fade-rise [animation-delay:550ms] motion-reduce:animate-none">
-            <Button href="#philosophy" variant="ghost">
-              Discover REFUGE61
-            </Button>
+            
           </div>
         </div>
       </div>

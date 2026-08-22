@@ -26,7 +26,7 @@ export function Philosophy() {
         <div className="flex flex-col md:flex-row">
           <div className="relative aspect-[4/5] w-full md:aspect-auto md:w-[55%]">
             <Image
-              src="/images/lifestyle/lifestyle-family-18.jpg"
+              src="/images/lifestyle/admire.png"
               alt="Four skiers moving together across the snow at dusk, silhouetted against the sky."
               fill
               sizes="(min-width: 768px) 55vw, 100vw"

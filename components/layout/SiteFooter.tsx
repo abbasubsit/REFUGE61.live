@@ -37,6 +37,12 @@ export function SiteFooter() {
               {item.label}
             </Link>
           ))}
+          <Link
+            href="/terms"
+            className="text-eyebrow uppercase tracking-[0.12em] text-charcoal/70 transition-colors duration-200 ease-editorial hover:text-charcoal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest"
+          >
+            Terms & Conditions
+          </Link>
         </nav>
       </div>
     </footer>

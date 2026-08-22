@@ -9,7 +9,7 @@ import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { BottomScrim } from "@/components/ui/BottomScrim";
 
 export const metadata: Metadata = {
-  title: "Practical Information — REFUGE61",
+  title: "Practical Information (B&W) — REFUGE61",
   description: "Functional information about stays at REFUGE61.",
 };
 
@@ -45,7 +45,7 @@ const InfoBlock = ({
             alt={imageAlt}
             fill
             sizes="(min-width: 768px) 33vw, 100vw"
-            className="object-cover"
+            className="object-cover grayscale"
           />
         </div>
       </div>
@@ -64,7 +64,7 @@ const InfoBlock = ({
   </RevealOnScroll>
 );
 
-export default function PracticalInformationPage() {
+export default function PracticalInformationV2Page() {
   return (
     <SiteShell
       navItems={SITE_NAV_ITEMS}

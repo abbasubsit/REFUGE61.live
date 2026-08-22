@@ -19,7 +19,7 @@ export function BrandSignature() {
           alt={FULL_LOGO_V4.alt}
           width={FULL_LOGO_V4.width}
           height={FULL_LOGO_V4.height}
-          className="h-11 w-auto"
+          className="h-8 w-auto"
         />
       </RevealOnScroll>
     </section>

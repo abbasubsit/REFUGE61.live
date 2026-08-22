@@ -35,7 +35,7 @@ export const PILLARS_V4: PillarV4[] = [
     eyebrow: "Move",
     headline: "Move through the landscape.",
     body: "Each day begins outside. Ski, walk, explore — at your own pace, together with the group or alone. No programme to complete, no performance to prove. Just the pleasure of moving through a vast winter landscape.",
-    image: "/images/story/story-ski-tracks-landscape.jpg",
+    image: "/images/story/move.png",
     alt: "A cross-country skier crossing a wide snow landscape near REFUGE61.",
   },
   {
@@ -51,7 +51,7 @@ export const PILLARS_V4: PillarV4[] = [
     eyebrow: "Reset",
     headline: "Make room for something else.",
     body: "A week away from schedules, noise and everyday routines. Time to slow down, read, sit by the fire, step outside or simply do nothing. Sometimes, a little distance is all we need.",
-    image: "/images/lifestyle/lifestyle-iphone-13.jpg",
+    image: "/images/story/rest.png",
     alt: "An empty snow-covered terrace with a stone fireplace, quiet and still.",
   },
 ];

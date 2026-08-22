@@ -39,7 +39,7 @@ export const NAV_ITEMS: NavItem[] = [
  */
 export const NAV_ITEMS_V4: NavItem[] = [
   { label: "Philosophy", href: "#philosophy" },
+  { label: "The Lodge", href: "/the-lodge" },
   { label: "Experience", href: "#experience" },
-  { label: "Expedition", href: "#expedition" },
   { label: "Contact", href: "#contact" },
 ];

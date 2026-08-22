@@ -118,7 +118,7 @@ export function CinematicVideo() {
     <section
       id="film"
       aria-labelledby="film-heading"
-      className="bg-snow py-space-12 md:py-space-20"
+      className="bg-snow"
     >
       <div ref={wrapperRef} className="relative h-[85vh] w-full overflow-hidden bg-charcoal">
         <h2 id="film-heading" className="sr-only">
