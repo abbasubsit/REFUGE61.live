@@ -9,6 +9,7 @@ import { SITE_NAV_ITEMS } from "@/lib/siteNav";
 import { HEADER_LOGO_V4 } from "@/lib/logoV4";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { BottomScrim } from "@/components/ui/BottomScrim";
+import { AiLabel } from "@/components/ui/AiLabel";
 
 export const metadata: Metadata = {
   title: "The Lodge — REFUGE61",
@@ -244,6 +245,7 @@ export default function TheLodgePage() {
                 sizes="(min-width: 768px) 55vw, 100vw"
                 className="object-cover"
               />
+              <AiLabel src="/images/client-update/bjorkasen_03.jpeg" />
             </div>
           </div>
         </RevealOnScroll>
@@ -277,6 +279,7 @@ export default function TheLodgePage() {
                 sizes="(min-width: 768px) 55vw, 100vw"
                 className="object-cover"
               />
+              <AiLabel src="/images/client-update/Repas senioir.png" />
             </div>
           </div>
         </RevealOnScroll>
@@ -310,6 +313,7 @@ export default function TheLodgePage() {
                 sizes="(min-width: 768px) 55vw, 100vw"
                 className="object-cover"
               />
+              <AiLabel src="/images/client-update/Soiree Feu.png" />
             </div>
           </div>
         </RevealOnScroll>

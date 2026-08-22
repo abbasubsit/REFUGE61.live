@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
+import { AiLabel } from "@/components/ui/AiLabel";
 
 export type PillarContent = {
   id: string;
@@ -49,6 +50,7 @@ export function PillarSection({ pillar, reverse, headingLevel = "h3" }: PillarSe
             sizes="(min-width: 768px) 55vw, 100vw"
             className="object-cover"
           />
+          <AiLabel src={pillar.image} />
         </div>
 
         <div className="flex w-full flex-col justify-center px-space-4 py-space-12 md:w-[45%] md:px-space-8 md:py-space-20 lg:px-space-12">

@@ -7,6 +7,7 @@ import { SITE_NAV_ITEMS } from "@/lib/siteNav";
 import { HEADER_LOGO_V4 } from "@/lib/logoV4";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { BottomScrim } from "@/components/ui/BottomScrim";
+import { AiLabel } from "@/components/ui/AiLabel";
 
 export const metadata: Metadata = {
   title: "Practical Information (B&W) — REFUGE61",
@@ -174,6 +175,7 @@ export default function PracticalInformationV2Page() {
                 sizes="(min-width: 768px) 100vw, 100vw"
                 className="object-cover"
               />
+              <AiLabel src="/images/client-update/REFUGE61_01_arrivee_accueil.jpg" />
             </div>
           </RevealOnScroll>
 
