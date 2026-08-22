@@ -47,13 +47,13 @@ export default function LetsTalkPage() {
 
         <div className="relative flex flex-1 flex-col justify-end px-space-4 pb-space-12 pt-24 md:px-space-6 md:pb-space-16 md:pt-28 lg:px-space-8">
           <div className="max-w-3xl text-snow">
-            <p className="animate-fade-rise text-eyebrow uppercase tracking-[0.12em] text-snow/90 mb-space-4 drop-shadow-[0_3px_8px_rgba(0,0,0,0.65)] motion-reduce:animate-none">
+            <p className="animate-fade-rise text-eyebrow uppercase tracking-[0.12em] text-snow mb-space-4 [text-shadow:0_1px_2px_rgba(0,0,0,0.95),0_2px_10px_rgba(0,0,0,0.85),0_4px_28px_rgba(0,0,0,0.7)] motion-reduce:animate-none">
               {hero.eyebrow}
             </p>
-            <h1 className="animate-fade-rise font-display text-display-m text-snow drop-shadow-[0_3px_8px_rgba(0,0,0,0.65)] [animation-delay:200ms] motion-reduce:animate-none md:text-display-l">
+            <h1 className="animate-fade-rise font-display text-display-m text-snow [text-shadow:0_1px_2px_rgba(0,0,0,0.95),0_2px_10px_rgba(0,0,0,0.85),0_4px_28px_rgba(0,0,0,0.7)] [animation-delay:200ms] motion-reduce:animate-none md:text-display-l">
               {hero.headline}
             </h1>
-            <div className="mt-space-2 max-w-md animate-fade-rise text-body-l text-snow/90 drop-shadow-[0_3px_8px_rgba(0,0,0,0.65)] [animation-delay:400ms] motion-reduce:animate-none space-y-space-4">
+            <div className="mt-space-2 max-w-md animate-fade-rise text-body-l text-snow [text-shadow:0_1px_2px_rgba(0,0,0,0.95),0_2px_10px_rgba(0,0,0,0.85),0_4px_28px_rgba(0,0,0,0.7)] [animation-delay:400ms] motion-reduce:animate-none space-y-space-4">
               {hero.paragraphs.map((p, i) => (
                 <p key={i}>{p}</p>
               ))}
