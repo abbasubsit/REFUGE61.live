@@ -53,24 +53,33 @@ export default function LetsTalkPage() {
             <h1 className="animate-fade-rise font-display text-display-m text-snow [text-shadow:0_1px_2px_rgba(0,0,0,0.95),0_2px_10px_rgba(0,0,0,0.85),0_4px_28px_rgba(0,0,0,0.7)] [animation-delay:200ms] motion-reduce:animate-none md:text-display-l">
               {hero.headline}
             </h1>
-            <div className="mt-space-2 max-w-md animate-fade-rise text-body-l text-snow [text-shadow:0_1px_2px_rgba(0,0,0,0.95),0_2px_10px_rgba(0,0,0,0.85),0_4px_28px_rgba(0,0,0,0.7)] [animation-delay:400ms] motion-reduce:animate-none space-y-space-4">
-              {hero.paragraphs.map((p, i) => (
-                <p key={i}>{p}</p>
-              ))}
-            </div>
+           <div className="mt-space-2 max-w-md animate-fade-rise text-body-l text-snow [animation-delay:400ms] motion-reduce:animate-none space-y-space-4">
+  {hero.paragraphs.map((p, i) => (
+    <p
+      key={i}
+      className="rounded-sm bg-gradient-to-r from-black/60 via-black/30 to-transparent px-4 py-2 [text-shadow:0_1px_2px_rgba(0,0,0,0.95),0_2px_10px_rgba(0,0,0,0.75),0_4px_24px_rgba(0,0,0,0.55)]"
+    >
+      {p}
+    </p>
+  ))}
+</div>
           </div>
         </div>
       </section>
 
       {/* 2. HOSTS — BJØRN & MATHIEU */}
-      <section className="bg-snow py-space-16 md:py-space-20">
+      <section className="bg-snow py-space-10 md:py-space-10">
+
+        {/* Bjørn & Mathieu */}
         <Container>
           <RevealOnScroll variant="fade" durationMs={800}>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-space-12 md:gap-space-16 mb-space-16">
 
               {/* Bjorn */}
               <div>
                 <div className="flex items-center gap-space-4 mb-space-6">
+
                   <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-full bg-cream md:h-28 md:w-28">
                     <Image
                       src="/images/hosts/host-bjorn-bw.jpg"
@@ -84,6 +93,7 @@ export default function LetsTalkPage() {
                   <h2 className="text-heading-s text-charcoal uppercase">
                     {hosts.bjorn.name}
                   </h2>
+
                 </div>
 
                 <div className="text-body-m text-charcoal/80 space-y-space-4">
@@ -93,9 +103,11 @@ export default function LetsTalkPage() {
                 </div>
               </div>
 
+
               {/* Mathieu */}
               <div>
                 <div className="flex items-center gap-space-4 mb-space-6">
+
                   <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-full bg-cream md:h-28 md:w-28">
                     <Image
                       src="/images/hosts/host-mathieu-bw.jpg"
@@ -109,6 +121,7 @@ export default function LetsTalkPage() {
                   <h2 className="text-heading-s text-charcoal uppercase">
                     {hosts.mathieu.name}
                   </h2>
+
                 </div>
 
                 <div className="text-body-m text-charcoal/80 space-y-space-4">
@@ -120,19 +133,107 @@ export default function LetsTalkPage() {
 
             </div>
 
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-heading-s text-charcoal mb-space-6 uppercase">
-                {hosts.together.name}
-              </h2>
-
-              <div className="text-body-l text-charcoal/80 space-y-space-4">
-                {hosts.together.bio.map((p, i) => (
-                  <p key={i}>{p}</p>
-                ))}
-              </div>
-            </div>
           </RevealOnScroll>
         </Container>
+
+
+        {/* =========================================================
+    TOGETHER — ONE WIDE IMAGE WITH BALANCED TEXT
+    ========================================================= */}
+
+        <RevealOnScroll variant="fade" durationMs={800}>
+
+          <div className="relative w-full overflow-hidden">
+
+            {/* Wide Image */}
+            <div className="relative w-full aspect-[21/9] min-h-[520px]">
+
+              <Image
+                src="/images/hosts/host-together.jpg"
+                alt="Bjørn and Mathieu standing in front of the REFUGE61 lodge"
+                fill
+                priority
+                sizes="100vw"
+                className="object-cover object-center"
+              />
+
+              {/* Dark overlay */}
+              <div className="absolute inset-0 bg-black/20" />
+
+
+              {/* ===================================================
+          LEFT SIDE TEXT
+          =================================================== */}
+
+              <div className="absolute inset-y-0 left-0 z-10 flex w-[30%] items-center px-space-6 md:px-space-10 lg:px-space-14">
+
+                <div className="text-white max-w-md">
+
+                  {/* Heading */}
+                  <h2 className="text-heading-s uppercase mb-space-4">
+                    {hosts.together.name}
+                  </h2>
+
+                  {/* Line */}
+                  <div className="w-16 h-[2px] bg-white/80 mb-space-6" />
+
+                  {/* Left Text */}
+                  <div className="text-body-m md:text-body-l space-y-space-4">
+
+                    <p>{hosts.together.bio[0]}</p>
+
+                    <p>{hosts.together.bio[1]}</p>
+
+                    <p>
+                      REFUGE61° grew from that shared vision. It is not about
+                      following a programme or ticking boxes.
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              {/* ===================================================
+          RIGHT SIDE TEXT
+          =================================================== */}
+
+              <div className="absolute inset-y-0 right-0 z-10 flex w-[30%] items-center px-space-6 md:px-space-10 lg:px-space-14">
+
+                <div className="text-white max-w-md">
+
+                  {/* Right Text */}
+                  <div className="text-body-m md:text-body-l space-y-space-4">
+
+                    <p>
+                      It is about living together for a few days in a special
+                      place, getting outside, sharing meals and experiences,
+                      and enjoying the rhythm of winter in the Norwegian
+                      mountains.
+                    </p>
+
+                    <p>
+                      With REFUGE61°, we want to create the kind of week we
+                      would personally love to experience: simple, active and
+                      authentic, with time outdoors, good food, shared moments
+                      and the freedom to enjoy the mountains at your own pace.
+                    </p>
+
+                    <p>{hosts.together.bio[4]}</p>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </RevealOnScroll>
       </section>
 
       {/* 3. BEFORE THE QUESTIONNAIRE */}

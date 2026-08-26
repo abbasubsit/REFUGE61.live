@@ -31,12 +31,13 @@ const InfoBlock = ({
 }) => (
   <RevealOnScroll variant="fade" durationMs={800}>
     <div
-      className={`grid grid-cols-1 md:grid-cols-12 gap-space-4 md:gap-space-8 py-space-8 border-t border-charcoal/10 ${highlight ? "bg-cream px-space-4 md:px-space-6" : ""
-        }`}
+      className={`grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_minmax(0,1.8fr)] gap-space-6 md:gap-space-16 py-space-8 border-t border-charcoal/10 ${
+        highlight ? "bg-cream px-space-4 md:px-space-6" : ""
+      }`}
     >
-      {/* LEFT SIDE — Section title + small image */}
-      <div className="md:col-span-4">
-        <h2 className="text-eyebrow uppercase tracking-[0.12em] text-forest mb-space-3">
+      {/* LEFT SIDE — Section title + image */}
+      <div className="md:col-span-1 mt-[5px]">
+        <h2 className="text-eyebrow text-[14px] uppercase tracking-[0.12em] text-forest mb-space-3">
           {eyebrow}
         </h2>
 
@@ -45,14 +46,14 @@ const InfoBlock = ({
             src={imageSrc}
             alt={imageAlt}
             fill
-            sizes="(min-width: 768px) 33vw, 100vw"
+            sizes="(min-width: 768px) 32vw, 100vw"
             className="object-cover"
           />
         </div>
       </div>
 
-      {/* RIGHT SIDE — Existing headline + text */}
-      <div className="md:col-span-8 flex flex-col gap-space-4 max-w-[62ch]">
+      {/* RIGHT SIDE — Headline + content */}
+      <div className="md:col-span-1 flex flex-col gap-space-4 max-w-[62ch]">
         <h3 className="font-display text-display-m italic text-charcoal">
           {headline}
         </h3>
@@ -110,7 +111,6 @@ export default function PracticalInformationPage() {
       {/* Main Content */}
       <section className="bg-snow px-space-4 py-space-16 md:px-space-8 md:py-space-20 lg:px-space-16">
         <div className="max-w-[1200px] mx-auto">
-
           {/* THE WEEKS */}
           <InfoBlock
             eyebrow="The Weeks"
@@ -160,9 +160,7 @@ export default function PracticalInformationPage() {
               before your journey.
             </p>
 
-            <p>
-              No need to travel into Oslo. No car is needed.
-            </p>
+            <p>No need to travel into Oslo. No car is needed.</p>
           </InfoBlock>
 
           {/* EXISTING LARGE IMAGE */}
@@ -223,7 +221,7 @@ export default function PracticalInformationPage() {
           <InfoBlock
             eyebrow="Ski From The Door"
             headline="650 kilometres of tracks. Twenty metres from the lodge."
-            imageSrc="/images/practical/650km.png"
+            imageSrc="/images/practical/650km.jpeg"
             imageAlt="Cross-country skiing near REFUGE61"
           >
             <p>
@@ -460,4 +458,3 @@ export default function PracticalInformationPage() {
     </SiteShell>
   );
 }
-

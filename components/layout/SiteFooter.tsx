@@ -23,7 +23,7 @@ export function SiteFooter() {
             alt={HEADER_LOGO_V4.alt}
             width={HEADER_LOGO_V4.solid.width}
             height={HEADER_LOGO_V4.solid.height}
-            className="h-6 w-auto"
+            className="h-15 w-auto"
           />
         </Link>
 

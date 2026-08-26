@@ -48,9 +48,10 @@ export function LetsTalkForm() {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value, type } = e.target;
-    
+
     if (type === "checkbox" && name === "days") {
       const checked = (e.target as HTMLInputElement).checked;
+
       setFormData((prev) => ({
         ...prev,
         days: checked
@@ -63,13 +64,18 @@ export function LetsTalkForm() {
         consent: (e.target as HTMLInputElement).checked,
       }));
     } else {
-      setFormData((prev) => ({ ...prev, [name]: value }));
+      setFormData((prev) => ({
+        ...prev,
+        [name]: value,
+      }));
     }
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
     console.log("Form payload:", formData);
+
     setIsSubmitted(true);
   };
 
@@ -85,21 +91,37 @@ export function LetsTalkForm() {
 
   const baseInputClasses =
     "w-full bg-transparent border-b border-charcoal/20 py-2 text-body-m text-charcoal outline-none transition-colors focus-visible:border-forest focus-visible:ring-0 placeholder:text-charcoal/55";
-  const labelClasses = "text-eyebrow text-charcoal block mb-1 uppercase tracking-widest";
+
+  const labelClasses =
+    "text-eyebrow text-charcoal block mb-1 uppercase tracking-widest";
+
   const legendClasses = labelClasses + " mb-space-3";
-  const radioCheckboxLabelClasses = "text-body-m text-charcoal cursor-pointer flex items-center";
-  
+
+  const radioCheckboxLabelClasses =
+    "text-body-m text-charcoal cursor-pointer flex items-center";
+
   return (
-    <form onSubmit={handleSubmit} className="mx-auto max-w-3xl space-y-space-8" noValidate={false}>
-      
+    <form
+      onSubmit={handleSubmit}
+      className="mx-auto max-w-3xl space-y-space-8"
+      noValidate={false}
+    >
       {/* ABOUT YOU */}
       <fieldset className="space-y-space-4">
-        <legend className={legendClasses}>{form.groups.aboutYou.title}</legend>
+        <legend className={legendClasses}>
+          {form.groups.aboutYou.title}
+        </legend>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-space-4">
+          {/* FIRST NAME */}
           <div>
-            <label htmlFor="firstName" className="block text-eyebrow uppercase tracking-[0.12em] text-forest mb-space-1">
+            <label
+              htmlFor="firstName"
+              className="block text-eyebrow uppercase tracking-[0.12em] text-forest mb-space-1"
+            >
               {form.groups.aboutYou.fields.firstName} *
             </label>
+
             <input
               type="text"
               id="firstName"
@@ -111,10 +133,16 @@ export function LetsTalkForm() {
               className={baseInputClasses}
             />
           </div>
+
+          {/* LAST NAME */}
           <div>
-            <label htmlFor="lastName" className="block text-eyebrow uppercase tracking-[0.12em] text-forest mb-space-1">
+            <label
+              htmlFor="lastName"
+              className="block text-eyebrow uppercase tracking-[0.12em] text-forest mb-space-1"
+            >
               {form.groups.aboutYou.fields.lastName} *
             </label>
+
             <input
               type="text"
               id="lastName"
@@ -126,10 +154,16 @@ export function LetsTalkForm() {
               className={baseInputClasses}
             />
           </div>
+
+          {/* EMAIL */}
           <div>
-            <label htmlFor="email" className="block text-eyebrow uppercase tracking-[0.12em] text-forest mb-space-1">
+            <label
+              htmlFor="email"
+              className="block text-eyebrow uppercase tracking-[0.12em] text-forest mb-space-1"
+            >
               {form.groups.aboutYou.fields.email} *
             </label>
+
             <input
               type="email"
               id="email"
@@ -141,10 +175,16 @@ export function LetsTalkForm() {
               className={baseInputClasses}
             />
           </div>
+
+          {/* PHONE */}
           <div>
-            <label htmlFor="phone" className="block text-eyebrow uppercase tracking-[0.12em] text-forest mb-space-1">
+            <label
+              htmlFor="phone"
+              className="block text-eyebrow uppercase tracking-[0.12em] text-forest mb-space-1"
+            >
               {form.groups.aboutYou.fields.phone}
             </label>
+
             <input
               type="tel"
               id="phone"
@@ -154,10 +194,16 @@ export function LetsTalkForm() {
               className={baseInputClasses}
             />
           </div>
+
+          {/* COUNTRY */}
           <div className="md:col-span-2">
-            <label htmlFor="country" className="block text-eyebrow uppercase tracking-[0.12em] text-forest mb-space-1">
+            <label
+              htmlFor="country"
+              className="block text-eyebrow uppercase tracking-[0.12em] text-forest mb-0"
+            >
               {form.groups.aboutYou.fields.country} *
             </label>
+
             <input
               type="text"
               id="country"
@@ -169,12 +215,25 @@ export function LetsTalkForm() {
               className={baseInputClasses}
             />
           </div>
+
         </div>
       </fieldset>
 
+{/* QUESTIONNAIRE INTRO */}
+<div className="mt-0 mb-space-2">
+  <p className="text-body-m text-[#173D2A] italic text-left max-w-2xl mx-auto">
+    We invite you to answer the questionnaire below, which is entirely
+    optional. It is only intended to help us understand if REFUGE61 is
+    right for you.
+  </p>
+</div>
+
       {/* AGE */}
       <fieldset className="space-y-space-3">
-        <legend className={legendClasses}>{form.groups.age.title}</legend>
+        <legend className={legendClasses}>
+          {form.groups.age.title}
+        </legend>
+
         <div className="space-y-2">
           {form.groups.age.options.map((option, i) => (
             <div key={i} className="flex items-center">
@@ -187,7 +246,11 @@ export function LetsTalkForm() {
                 onChange={handleChange}
                 className="mr-3 h-4 w-4 text-forest focus:ring-forest border-charcoal/20"
               />
-              <label htmlFor={`age-${i}`} className={radioCheckboxLabelClasses}>
+
+              <label
+                htmlFor={`age-${i}`}
+                className={radioCheckboxLabelClasses}
+              >
                 {option}
               </label>
             </div>
@@ -197,7 +260,10 @@ export function LetsTalkForm() {
 
       {/* WHICH WEEK */}
       <fieldset className="space-y-space-3">
-        <legend className={legendClasses}>{form.groups.week.title}</legend>
+        <legend className={legendClasses}>
+          {form.groups.week.title}
+        </legend>
+
         <div className="space-y-2">
           {form.groups.week.options.map((option, i) => (
             <div key={i} className="flex items-center">
@@ -210,7 +276,11 @@ export function LetsTalkForm() {
                 onChange={handleChange}
                 className="mr-3 h-4 w-4 text-forest focus:ring-forest border-charcoal/20"
               />
-              <label htmlFor={`week-${i}`} className={radioCheckboxLabelClasses}>
+
+              <label
+                htmlFor={`week-${i}`}
+                className={radioCheckboxLabelClasses}
+              >
                 {option}
               </label>
             </div>
@@ -220,7 +290,10 @@ export function LetsTalkForm() {
 
       {/* WHO WOULD YOU BE COMING WITH? */}
       <fieldset className="space-y-space-3">
-        <legend className={legendClasses}>{form.groups.comingWith.title}</legend>
+        <legend className={legendClasses}>
+          {form.groups.comingWith.title}
+        </legend>
+
         <div className="space-y-2">
           {form.groups.comingWith.options.map((option, i) => (
             <div key={i} className="flex items-center">
@@ -233,7 +306,11 @@ export function LetsTalkForm() {
                 onChange={handleChange}
                 className="mr-3 h-4 w-4 text-forest focus:ring-forest border-charcoal/20"
               />
-              <label htmlFor={`comingWith-${i}`} className={radioCheckboxLabelClasses}>
+
+              <label
+                htmlFor={`comingWith-${i}`}
+                className={radioCheckboxLabelClasses}
+              >
                 {option}
               </label>
             </div>
@@ -243,9 +320,18 @@ export function LetsTalkForm() {
 
       {/* WHAT ATTRACTS YOU */}
       <fieldset className="space-y-space-3">
-        <legend className={legendClasses}>{form.groups.attracts.title} *</legend>
-        <label htmlFor="attracts" className="sr-only">{form.groups.attracts.title} *</label>
-        <p className="text-body-m text-charcoal/70 -mt-space-2">{form.groups.attracts.helpText}</p>
+        <legend className={legendClasses}>
+          {form.groups.attracts.title} *
+        </legend>
+
+        <label htmlFor="attracts" className="sr-only">
+          {form.groups.attracts.title} *
+        </label>
+
+        <p className="text-body-m text-charcoal/70 -mt-space-2">
+          {form.groups.attracts.helpText}
+        </p>
+
         <textarea
           id="attracts"
           name="attracts"
@@ -260,8 +346,14 @@ export function LetsTalkForm() {
 
       {/* HOW DO YOU IMAGINE YOUR DAYS */}
       <fieldset className="space-y-space-3">
-        <legend className={legendClasses}>{form.groups.days.title}</legend>
-        <p className="text-body-m text-charcoal/70 -mt-space-2">{form.groups.days.helpText}</p>
+        <legend className={legendClasses}>
+          {form.groups.days.title}
+        </legend>
+
+        <p className="text-body-m text-charcoal/70 -mt-space-2">
+          {form.groups.days.helpText}
+        </p>
+
         <div className="space-y-2">
           {form.groups.days.options.map((option, i) => (
             <div key={i} className="flex items-center">
@@ -274,7 +366,11 @@ export function LetsTalkForm() {
                 onChange={handleChange}
                 className="mr-3 h-4 w-4 text-forest focus:ring-forest border-charcoal/20 rounded-none"
               />
-              <label htmlFor={`days-${i}`} className={radioCheckboxLabelClasses}>
+
+              <label
+                htmlFor={`days-${i}`}
+                className={radioCheckboxLabelClasses}
+              >
                 {option}
               </label>
             </div>
@@ -284,7 +380,10 @@ export function LetsTalkForm() {
 
       {/* HOW ACTIVE */}
       <fieldset className="space-y-space-3">
-        <legend className={legendClasses}>{form.groups.active.title}</legend>
+        <legend className={legendClasses}>
+          {form.groups.active.title}
+        </legend>
+
         <div className="space-y-2">
           {form.groups.active.options.map((option, i) => (
             <div key={i} className="flex items-center">
@@ -297,7 +396,11 @@ export function LetsTalkForm() {
                 onChange={handleChange}
                 className="mr-3 h-4 w-4 text-forest focus:ring-forest border-charcoal/20"
               />
-              <label htmlFor={`active-${i}`} className={radioCheckboxLabelClasses}>
+
+              <label
+                htmlFor={`active-${i}`}
+                className={radioCheckboxLabelClasses}
+              >
                 {option}
               </label>
             </div>
@@ -305,16 +408,22 @@ export function LetsTalkForm() {
         </div>
       </fieldset>
 
-      {/* SHARING — removed 2026-08-20: Mathieu marked this question with a
-          cross ("the questionnaire is maybe too long"). The field, its state
-          and its content entry are left in place so it can be restored
-          without rework if he changes his mind. */}
+      {/* SHARING — removed 2026-08-20 */}
 
       {/* ANYTHING ELSE */}
       <fieldset className="space-y-space-3">
-        <legend className={legendClasses}>{form.groups.anythingElse.title}</legend>
-        <label htmlFor="anythingElse" className="sr-only">{form.groups.anythingElse.title}</label>
-        <p className="text-body-m text-charcoal/70 -mt-space-2">{form.groups.anythingElse.helpText}</p>
+        <legend className={legendClasses}>
+          {form.groups.anythingElse.title}
+        </legend>
+
+        <label htmlFor="anythingElse" className="sr-only">
+          {form.groups.anythingElse.title}
+        </label>
+
+        <p className="text-body-m text-charcoal/70 -mt-space-2">
+          {form.groups.anythingElse.helpText}
+        </p>
+
         <textarea
           id="anythingElse"
           name="anythingElse"
@@ -328,6 +437,7 @@ export function LetsTalkForm() {
       {/* PRIVACY */}
       <fieldset>
         <legend className={legendClasses}>PRIVACY</legend>
+
         <div className="flex items-start">
           <input
             type="checkbox"
@@ -339,12 +449,21 @@ export function LetsTalkForm() {
             aria-required="true"
             className="mr-3 mt-1 h-4 w-4 text-forest focus:ring-forest border-charcoal/20 rounded-none"
           />
-          <label htmlFor="consent" className="text-body-m text-charcoal">
-            {/* 
-              Brief text: "I agree that REFUGE61 may use the information provided in this form to respond to my enquiry and contact me about a possible stay. I have read the Privacy Policy."
-              "Privacy Policy" links to /privacy-policy.
-            */}
-            I agree that REFUGE61 may use the information provided in this form to respond to my enquiry and contact me about a possible stay. I have read the <a href="/privacy-policy" className="underline hover:text-forest focus-visible:ring-2 focus-visible:ring-forest focus-visible:outline-none">Privacy Policy</a>.
+
+          <label
+            htmlFor="consent"
+            className="text-body-m text-charcoal"
+          >
+            I agree that REFUGE61 may use the information provided in this
+            form to respond to my enquiry and contact me about a possible
+            stay. I have read the{" "}
+            <a
+              href="/privacy-policy"
+              className="underline hover:text-forest focus-visible:ring-2 focus-visible:ring-forest focus-visible:outline-none"
+            >
+              Privacy Policy
+            </a>
+            .
           </label>
         </div>
       </fieldset>
@@ -354,11 +473,11 @@ export function LetsTalkForm() {
         <Button type="submit" variant="primary">
           {form.submit.button}
         </Button>
+
         <p className="mt-space-4 text-body-m text-charcoal max-w-lg">
           {form.submit.note}
         </p>
       </div>
-
     </form>
   );
 }

@@ -35,7 +35,7 @@ export const PILLARS_V4: PillarV4[] = [
     eyebrow: "Move",
     headline: "Move through the landscape.",
     body: "Each day begins outside. Ski, walk, explore — at your own pace, together with the group or alone. No programme to complete, no performance to prove. Just the pleasure of moving through a vast winter landscape.",
-    image: "/images/story/move.png",
+    image: "/images/story/move.jpeg",
     alt: "A cross-country skier crossing a wide snow landscape near REFUGE61.",
   },
   {
@@ -43,7 +43,7 @@ export const PILLARS_V4: PillarV4[] = [
     eyebrow: "Gather",
     headline: "Come back together.",
     body: "Life at REFUGE61 happens around the table. We cook together, share the meal, open a bottle, talk and laugh. There is no staff behind the scenes — everyone takes part in making the house come alive.",
-    image: "/images/lifestyle/lifestyle-rush-09-vegetables.jpg",
+    image: "/images/lifestyle/lifestyle-rush-09-vegetables.jpeg",
     alt: "Several people peeling potatoes, carrots and parsnips together along a kitchen counter, photographed from the shoulders down.",
   },
   {

@@ -11,10 +11,10 @@
  */
 export const AI_GENERATED_IMAGES: ReadonlySet<string> = new Set([
   "/images/lifestyle/admire.png",
-  "/images/story/move.png",
-  "/images/client-update/bjorkasen_03.jpeg",
+  // "/images/story/move.jpeg",
+  // "/images/client-update/bjorkasen_03.jpeg",
   "/images/client-update/Repas senioir.png",
-  "/images/client-update/Soiree Feu.png",
+  // "/images/client-update/Soiree Feu.png",
   "/images/client-update/REFUGE61_01_arrivee_accueil.jpg",
 ]);
 

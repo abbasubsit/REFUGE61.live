@@ -43,21 +43,31 @@ export default function TheLodgePage() {
 
         <BottomScrim />
 
+        {/* Top scrim — same fix as the homepage hero (2026-08-26). The logo
+            and nav links are white and this photograph is bright sky behind
+            them, so without this they wash out. Darkens only the header band
+            and fades well above the headline; the photograph is untouched. */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 top-0 h-44 bg-gradient-to-b from-charcoal/60 via-charcoal/25 to-transparent"
+        />
+
         {/* pt clears the fixed header (h-16 / md:h-20) so the headline can
             never sit under the navigation on a short viewport. */}
         <div className="relative flex flex-1 flex-col justify-end px-space-4 pb-space-12 pt-24 md:px-space-6 md:pb-space-16 md:pt-28 lg:px-space-8">
           <div className="max-w-3xl">
-            <p className="animate-fade-rise text-eyebrow uppercase tracking-[0.12em] text-snow/90 mb-space-4 drop-shadow-[0_3px_8px_rgba(0,0,0,0.65)] motion-reduce:animate-none">
+            <p className="animate-fade-rise text-eyebrow uppercase tracking-[0.12em] text-snow mb-space-4 [text-shadow:0_1px_2px_rgba(0,0,0,0.95),0_2px_10px_rgba(0,0,0,0.85),0_4px_28px_rgba(0,0,0,0.7)] motion-reduce:animate-none">
               THE LODGE
             </p>
-            <h1 className="animate-fade-rise font-display text-display-m text-snow leading-[1.05] drop-shadow-[0_3px_8px_rgba(0,0,0,0.65)] [animation-delay:200ms] motion-reduce:animate-none md:text-display-l">
+            <h1 className="animate-fade-rise font-display text-display-m text-snow leading-[1.05] [text-shadow:0_1px_2px_rgba(0,0,0,0.95),0_2px_10px_rgba(0,0,0,0.85),0_4px_28px_rgba(0,0,0,0.7)] [animation-delay:200ms] motion-reduce:animate-none md:text-display-l">
               A warm and comfortable home in the Norwegian mountains
             </h1>
-            <div className="mt-space-2 max-w-md animate-fade-rise flex flex-col gap-space-4 drop-shadow-[0_3px_8px_rgba(0,0,0,0.65)] [animation-delay:400ms] motion-reduce:animate-none">
-              <p className="text-body-l text-snow/90">
+            <div className="mt-space-2 max-w-md animate-fade-rise flex flex-col gap-space-4 [animation-delay:400ms] motion-reduce:animate-none">
+              <p className="rounded-sm bg-gradient-to-r from-black/45 via-black/25 to-transparent px-3 py-2 text-body-l text-snow [text-shadow:0_1px_2px_rgba(0,0,0,0.95),0_2px_10px_rgba(0,0,0,0.85),0_4px_28px_rgba(0,0,0,0.7)]">
                 For the week, the lodge will be our home — a place to relax, share meals and enjoy time together after a day in the mountains.
               </p>
-              <p className="text-body-l text-snow/90">
+
+              <p className="rounded-sm bg-gradient-to-r from-black/45 via-black/25 to-transparent px-3 py-2 text-body-l text-snow [text-shadow:0_1px_2px_rgba(0,0,0,0.95),0_2px_10px_rgba(0,0,0,0.85),0_4px_28px_rgba(0,0,0,0.7)]">
                 The atmosphere is warm, authentic and relaxed — more a private mountain home than a hotel.
               </p>
             </div>
@@ -96,94 +106,136 @@ export default function TheLodgePage() {
       </section>
 
       {/* 3. THE ROOMS */}
+
       <section className="bg-cream px-space-4 py-space-16 md:px-space-8 md:py-space-20 lg:px-space-12">
         <div className="max-w-[1440px] mx-auto">
-          <RevealOnScroll variant="fade" durationMs={800}>
-            <div className="max-w-[800px] mb-space-12 md:mb-space-16">
-              <p className="text-eyebrow uppercase tracking-[0.12em] text-charcoal/60 mb-space-4">
-                THE ROOMS
-              </p>
-              <h2 className="font-display text-display-m md:text-display-l text-charcoal mb-space-6">
-                Simple, comfortable and private
-              </h2>
-              <div className="max-w-[55ch] flex flex-col gap-space-4">
-                <p className="text-body-l text-charcoal/85">
-                  Accommodation is arranged in comfortable rooms for a maximum of two people.
-                </p>
-                <p className="text-body-l text-charcoal/85">
-                  There are no dormitories. Everyone has a proper room in which to rest and recharge after a day outside.
-                </p>
-                <p className="text-body-l text-charcoal/85">
-                  The bedrooms are simple, warm and in keeping with the character of the lodge.
-                </p>
-              </div>
-            </div>
-          </RevealOnScroll>
+
+          {/* TOP — TEXT + RIGHT IMAGE */}
 
           <RevealOnScroll variant="fade" durationMs={800}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-space-4">
-              <div className="relative w-full h-[60vh] md:h-auto overflow-hidden">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-space-4 items-stretch">
+
+              {/* LEFT — TEXT */}
+
+              <div className="max-w-[700px]">
+                <p className="text-eyebrow uppercase tracking-[0.12em] text-charcoal/60 mb-space-4">
+                  THE ROOMS
+                </p>
+
+                <h2 className="font-display text-display-m md:text-display-l text-charcoal mb-space-6">
+                  Simple, comfortable and private
+                </h2>
+
+                <div className="max-w-[55ch] flex flex-col gap-space-4">
+                  <p className="text-body-l text-charcoal/85">
+                    Accommodation is arranged in comfortable rooms for a maximum of two people.
+                  </p>
+
+                  <p className="text-body-l text-charcoal/85">
+                    There are no dormitories. Everyone has a proper room in which to rest and recharge after a day outside.
+                  </p>
+
+                  <p className="text-body-l text-charcoal/85">
+                    The bedrooms are simple, warm and in keeping with the character of the lodge.
+                  </p>
+                </div>
+              </div>
+
+              {/* RIGHT — IMAGE */}
+
+              <div className="relative w-full h-full min-h-[500px] overflow-hidden">
                 <Image
                   src="/images/client-update/Bjorkasen hunting lodge in Gala-109.jpeg"
-                  alt="Bedroom detail"
+                  alt="Bedroom detail at REFUGE61"
                   fill
                   sizes="(min-width: 768px) 50vw, 100vw"
                   className="object-cover"
                 />
               </div>
-              <div className="flex flex-col gap-space-4">
-                <div className="relative aspect-[4/3] w-full overflow-hidden">
-                  <Image
-                    src="/images/client-update/Bjorkasen hunting lodge in Gala-242.jpeg"
-                    alt="Bedroom with yellow walls"
-                    fill
-                    sizes="(min-width: 768px) 50vw, 100vw"
-                    className="object-cover"
-                  />
-                </div>
-                <div className="relative aspect-[4/3] w-full overflow-hidden">
-                  <Image
-                    src="/images/client-update/Bjorkasen hunting lodge in Gala-108.jpeg"
-                    alt="Bedroom with mounted reindeer"
-                    fill
-                    sizes="(min-width: 768px) 50vw, 100vw"
-                    className="object-cover"
-                  />
-                </div>
-              </div>
+
             </div>
           </RevealOnScroll>
+
+          {/* BOTTOM — TWO MORE ROOM IMAGES */}
+
+          <RevealOnScroll variant="fade" durationMs={800}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-space-4 mt-space-16">
+
+              {/* IMAGE 2 */}
+
+              <div className="relative aspect-[4/3] w-full overflow-hidden">
+                <Image
+                  src="/images/client-update/Bjorkasen hunting lodge in Gala-242.jpeg"
+                  alt="Bedroom with yellow walls"
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+
+              {/* IMAGE 3 */}
+
+              <div className="relative aspect-[4/3] w-full overflow-hidden">
+                <Image
+                  src="/images/client-update/Bjorkasen hunting lodge in Gala-108.jpeg"
+                  alt="Bedroom with mounted reindeer"
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+
+            </div>
+          </RevealOnScroll>
+
         </div>
       </section>
 
+
+
       {/* 4. SAUNA & RELAXATION */}
+
       <section className="bg-snow px-space-4 py-space-16 md:px-space-8 md:py-space-20 lg:px-space-12">
         <div className="max-w-[1440px] mx-auto">
-          <RevealOnScroll variant="fade" durationMs={800}>
-            <div className="max-w-[800px] mb-space-12 md:mb-space-16">
-              <p className="text-eyebrow uppercase tracking-[0.12em] text-charcoal/60 mb-space-4">
-                SAUNA & RELAXATION
-              </p>
-              <h2 className="font-display text-display-m md:text-display-l text-charcoal mb-space-6">
-                Warmth after the cold
-              </h2>
-              <div className="max-w-[55ch] flex flex-col gap-space-4">
-                <p className="text-body-l text-charcoal/85">
-                  After a day in the snow, the sauna is the perfect place to slow down, warm up and relax.
-                </p>
-                <p className="text-body-l text-charcoal/85">
-                  And for those who want the full Nordic experience, step outside afterwards into the crisp winter air and snow — before heading back into the warmth.
-                </p>
-                <p className="text-body-l text-charcoal/85">
-                  A simple ritual, and one of the pleasures of life in the Norwegian mountains.
-                </p>
-              </div>
-            </div>
-          </RevealOnScroll>
+
+          {/* TEXT + RIGHT IMAGE */}
 
           <RevealOnScroll variant="fade" durationMs={800}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-space-4">
-              <div className="relative w-full h-[60vh] md:h-auto overflow-hidden">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-space-4 items-stretch">
+
+              {/* LEFT — TEXT */}
+
+              <div className="max-w-[700px]">
+                <p className="text-eyebrow uppercase tracking-[0.12em] text-charcoal/60 mb-space-4">
+                  SAUNA & RELAXATION
+                </p>
+
+                <h2 className="font-display text-display-m md:text-display-l text-charcoal mb-space-6">
+                  Warmth after the cold
+                </h2>
+
+                <div className="max-w-[55ch] flex flex-col gap-space-4">
+                  <p className="text-body-l text-charcoal/85">
+                    After a day in the snow, the sauna is the perfect place to slow down,
+                    warm up and relax.
+                  </p>
+
+                  <p className="text-body-l text-charcoal/85">
+                    And for those who want the full Nordic experience, step outside
+                    afterwards into the crisp winter air and snow — before heading back
+                    into the warmth.
+                  </p>
+
+                  <p className="text-body-l text-charcoal/85">
+                    A simple ritual, and one of the pleasures of life in the Norwegian
+                    mountains.
+                  </p>
+                </div>
+              </div>
+
+              {/* RIGHT — LARGE IMAGE */}
+
+              <div className="relative w-full h-full overflow-hidden">
                 <Image
                   src="/images/client-update/Sortie sauna.png"
                   alt="Throwing snow after sauna"
@@ -192,30 +244,45 @@ export default function TheLodgePage() {
                   className="object-cover"
                 />
               </div>
-              <div className="flex flex-col gap-space-4">
-                <div className="relative aspect-[4/3] w-full overflow-hidden">
-                  <Image
-                    src="/images/client-update/Bjorkasen hunting lodge in Gala-042.jpeg"
-                    alt="Sauna exterior"
-                    fill
-                    sizes="(min-width: 768px) 50vw, 100vw"
-                    className="object-cover"
-                  />
-                </div>
-                <div className="relative aspect-[4/3] w-full overflow-hidden">
-                  <Image
-                    src="/images/client-update/Bjorkasen hunting lodge in Gala-045.jpeg"
-                    alt="Sauna interior"
-                    fill
-                    sizes="(min-width: 768px) 50vw, 100vw"
-                    className="object-cover"
-                  />
-                </div>
-              </div>
+
             </div>
           </RevealOnScroll>
+
+          {/* BOTTOM — TWO MORE IMAGES */}
+
+          <RevealOnScroll variant="fade" durationMs={800}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-space-4 mt-space-16">
+
+              {/* SAUNA EXTERIOR */}
+
+              <div className="relative aspect-[4/3] w-full overflow-hidden">
+                <Image
+                  src="/images/client-update/Bjorkasen hunting lodge in Gala-042.jpeg"
+                  alt="Sauna exterior"
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+
+              {/* SAUNA INTERIOR */}
+
+              <div className="relative aspect-[4/3] w-full overflow-hidden">
+                <Image
+                  src="/images/client-update/Bjorkasen hunting lodge in Gala-045.jpeg"
+                  alt="Sauna interior"
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+
+            </div>
+          </RevealOnScroll>
+
         </div>
       </section>
+
 
       {/* 5. THE KITCHEN */}
       <section className="bg-cream">
@@ -239,7 +306,7 @@ export default function TheLodgePage() {
             </div>
             <div className="relative aspect-[4/5] md:aspect-auto md:w-[55%] md:min-h-[85vh]">
               <Image
-                src="/images/client-update/bjorkasen_03.jpeg"
+                src="/images/client-update/bjorkasen_03.jpg"
                 alt="Person in the kitchen"
                 fill
                 sizes="(min-width: 768px) 55vw, 100vw"
@@ -297,17 +364,17 @@ export default function TheLodgePage() {
                 When the day slows down
               </h2>
               <div className="mt-space-6 flex flex-col gap-space-4 max-w-[42ch]">
-                <p className="text-body-l text-snow/90">
+                <p className="text-body-l text-snow">
                   After skiing, snowshoeing or simply spending the day outdoors, there is nowhere better to end the day than around the fire.
                 </p>
-                <p className="text-body-l text-snow/90">
+                <p className="text-body-l text-snow">
                   A drink, a book, a conversation — or simply doing nothing for a while.
                 </p>
               </div>
             </div>
             <div className="relative aspect-[4/5] md:aspect-auto md:w-[55%] md:min-h-[85vh]">
               <Image
-                src="/images/client-update/Soiree Feu.png"
+                src="/images/client-update/Soiree Feu.jpg"
                 alt="People sitting by the fireplace"
                 fill
                 sizes="(min-width: 768px) 55vw, 100vw"
@@ -333,9 +400,22 @@ export default function TheLodgePage() {
                   <p className="text-body-l text-charcoal/85">
                     The lodge offers generous shared spaces, a fully equipped kitchen, a large dining room, comfortable living areas and everything we need to make it our home for the week.
                   </p>
-                  <p className="text-eyebrow text-charcoal tracking-[0.15em] leading-relaxed">
-                    2 PEOPLE MAX. PER ROOM · NO DORMITORIES · LARGE SHARED KITCHEN · DINING ROOM · FIREPLACE
-                  </p>
+                  <div className="grid grid-cols-2 gap-x-6 gap-y-4">
+                    {[
+                      ["👥", "2 PEOPLE MAX. PER ROOM"],
+                      ["🚫", "NO DORMITORIES"],
+                      ["🍳", "LARGE SHARED KITCHEN"],
+                      ["🍽", "DINING ROOM"],
+                      ["🔥", "FIREPLACE"],
+                    ].map(([icon, text]) => (
+                      <div key={text} className="flex items-center gap-2.5">
+                        <span className="text-base">{icon}</span>
+                        <span className="text-[11px] text-charcoal/75 font-medium tracking-[0.08em] leading-relaxed">
+                          {text}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
               

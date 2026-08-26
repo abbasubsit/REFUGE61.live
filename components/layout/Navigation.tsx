@@ -95,14 +95,14 @@ export function Navigation({
             // downloading at the moment the user scrolled past the hero,
             // leaving a visibly empty logo slot for a beat. The hidden one is
             // aria-hidden so assistive tech sees a single mark.
-            <span className="relative block h-7 w-auto md:h-9">
+            <span className="relative block h-9 w-auto md:h-12">
               <Image
                 src={officialLogo.transparent.src}
                 alt={officialLogo.alt}
                 width={officialLogo.transparent.width}
                 height={officialLogo.transparent.height}
                 priority
-                className={`h-7 w-auto md:h-9 ${isSolid ? "invisible" : "visible"}`}
+                className={`h-9 w-auto md:h-12 ${isSolid ? "invisible" : "visible"}`}
               />
               <Image
                 src={officialLogo.solid.src}
@@ -111,13 +111,13 @@ export function Navigation({
                 width={officialLogo.solid.width}
                 height={officialLogo.solid.height}
                 priority
-                className={`absolute inset-0 h-7 w-auto md:h-9 ${
+                className={`absolute inset-0 h-9 w-auto md:h-12 ${
                   isSolid ? "visible" : "invisible"
                 }`}
               />
             </span>
           ) : (
-            <Logo className="h-7 w-auto md:h-9" />
+            <Logo className="h-9 w-auto md:h-12" />
           )}
         </Link>
 

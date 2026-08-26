@@ -18,8 +18,8 @@ export const LETS_TALK_CONTENT = {
     mathieu: {
       name: "MATHIEU BONNIER",
       bio: [
-        "I’m Mathieu Bonnier – an entrepreneur and lifelong endurance and outdoor enthusiast.",
-        "Adventure has always been an important part of my life, from the mountains to crossing the Atlantic Ocean alone in a rowing boat. I particularly enjoy long-distance challenges, ski touring and cross-country skiing, but what matters most to me is not performance – it is the experience, the people and what we share along the way.",
+        "I’m Mathieu Bonnier – an entrepreneur and lifelong outdoor enthusiast, with a particular love for winter, snow and remote places.",
+        "For me, adventure is not about performance or going further than anyone else. It is about being outdoors, discovering new places, living simply and sharing good moments with the people around me.That is the spirit I hope to bring to REFUGE61°.",
       ],
     },
     together: {
@@ -166,11 +166,11 @@ export const LETS_TALK_CONTENT = {
     },
     {
       question: "What are the bedrooms like?",
-      answer: "Bedrooms are for two people and each has its own washbasin. Toilets are available on every floor. Showers and the sauna are in a separate building just a few metres away. Bed linen and towels are provided.",
+      answer: "Bedrooms are for two people. Toilets are available on every floor. Showers and the sauna are in a separate building just a few metres away. Bed linen and towels are provided.",
     },
     {
       question: "How do I get to REFUGE61?",
-      answer: "Fly to Oslo Airport (Gardermoen). The railway station is directly inside the airport. Direct trains run north to Vinstra, where we will meet our guests and take them the rest of the way to REFUGE61.",
+      answer: "Fly to Oslo Airport (Gardermoen). The railway station is directly inside the airport. Direct trains run north to Vinstra, in less than 3 hours, where we will meet our guests and take them the rest of the way to REFUGE61.",
     },
     {
       question: "What does a stay cost?",
