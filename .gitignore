@@ -43,3 +43,7 @@ next-env.d.ts
 # scratch review screenshots (ad-hoc, regenerate via _scripts/screenshot-*.mjs)
 # — curated screenshots for documentation still live in _scripts/screenshots/
 /_scripts/*.png
+
+# python
+__pycache__/
+*.pyc
