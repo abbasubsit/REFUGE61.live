@@ -39,7 +39,7 @@ export function SiteFooter({ locale = "en" }: { locale?: Locale } = {}) {
             </Link>
           ))}
           <Link
-            href="/terms"
+            href={`${localePrefix(locale)}/terms`}
             className="text-eyebrow uppercase tracking-[0.12em] text-charcoal/70 transition-colors duration-200 ease-editorial hover:text-charcoal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest"
           >{t(locale, "Terms & Conditions")}</Link>
         </nav>

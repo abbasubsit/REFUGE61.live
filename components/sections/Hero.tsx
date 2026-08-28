@@ -18,7 +18,7 @@ export function Hero({ locale = "en" }: { locale?: Locale } = {}) {
     <section
       id="hero"
       aria-label="REFUGE61 — a refuge above the treeline"
-      className="relative h-[100svh] w-full overflow-hidden bg-charcoal"
+      className="relative flex min-h-[100svh] w-full flex-col overflow-hidden bg-charcoal"
     >
       <div className="absolute inset-0 animate-hero-image motion-reduce:animate-none">
         <Image
@@ -45,9 +45,9 @@ export function Hero({ locale = "en" }: { locale?: Locale } = {}) {
         className="pointer-events-none absolute inset-x-0 top-0 h-44 bg-gradient-to-b from-charcoal/60 via-charcoal/25 to-transparent"
       />
 
-      <div className="relative flex h-full flex-col justify-end px-space-4 pb-space-12 md:px-space-6 md:pb-space-16 lg:px-space-8">
+      <div className="relative flex flex-1 flex-col justify-end px-space-4 pb-space-12 pt-24 md:px-space-6 md:pb-space-16 md:pt-28 lg:px-space-8">
         <div className="max-w-3xl">
-          <h1 className="animate-fade-rise font-display text-display-m text-snow drop-shadow-[0_3px_8px_rgba(0,0,0,0.65)] [animation-delay:200ms] motion-reduce:animate-none md:text-display-l lg:text-display-xl">{t(locale, "A refuge above the treeline")}</h1>
+          <h1 className="animate-fade-rise font-display text-display-m text-snow drop-shadow-[0_3px_8px_rgba(0,0,0,0.65)] [animation-delay:200ms] motion-reduce:animate-none md:text-display-l xl:text-display-xl">{t(locale, "A refuge above the treeline")}</h1>
           {/* Copy confirmed 2026-08-14 per Mathieu Bonnier's feedback on the
               first build — replaces the earlier placeholder sub-line. */}
          <div className="mt-space-2 max-w-lg animate-fade-rise rounded-sm bg-gradient-to-r from-black/45 via-black/25 to-transparent px-3 py-2 [animation-delay:400ms] motion-reduce:animate-none">
