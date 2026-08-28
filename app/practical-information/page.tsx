@@ -108,6 +108,30 @@ export default function PracticalInformationPage() {
         </div>
       </section>
 
+      {/* =========================================================
+          MAP — "Our home at 61 North"
+          Added 2026-08-28 at Mathieu's request: "Practical / at start
+          after 1st pic", i.e. directly below the hero photograph.
+
+          Rendered with intrinsic width/height and h-auto rather than
+          fill+object-cover: the map carries baked-in labels and a legend,
+          so any crop would cut information out of it.
+          ========================================================= */}
+      <section className="w-full bg-cream px-space-4 py-space-12 md:px-space-8 md:py-space-16 lg:px-space-16">
+        <div className="mx-auto max-w-[1200px]">
+          <RevealOnScroll variant="fade" durationMs={800}>
+            <Image
+              src="/images/practical/map-norway-refuge61.png"
+              alt="Map of southern Norway showing REFUGE61 at Bjorkaisen, north of Vinstra on the 61st parallel. Fly to Oslo, then approximately 2 hours 30 minutes by train from Oslo to Vinstra, then 45 minutes by car from Vinstra to the lodge. Transfers from Vinstra railway station are organised by the hosts."
+              width={1536}
+              height={1024}
+              sizes="(min-width: 1200px) 1200px, 100vw"
+              className="h-auto w-full"
+            />
+          </RevealOnScroll>
+        </div>
+      </section>
+
       {/* Main Content */}
       <section className="bg-snow px-space-4 py-space-16 md:px-space-8 md:py-space-20 lg:px-space-16">
         <div className="max-w-[1200px] mx-auto">

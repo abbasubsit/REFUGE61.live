@@ -400,7 +400,11 @@ export default function TheLodgePage() {
                   <p className="text-body-l text-charcoal/85">
                     The lodge offers generous shared spaces, a fully equipped kitchen, a large dining room, comfortable living areas and everything we need to make it our home for the week.
                   </p>
-                  <div className="grid grid-cols-2 gap-x-6 gap-y-4">
+                  {/* Icon scale bumped 2026-08-28 at the client's request
+                      ("The pictorial can be bigger?"): glyph text-base -> 2xl/3xl,
+                      label 11px -> 13px, with more room between rows so the
+                      larger marks do not crowd each other. */}
+                  <div className="grid grid-cols-2 gap-x-8 gap-y-6">
                     {[
                       ["👥", "2 PEOPLE MAX. PER ROOM"],
                       ["🚫", "NO DORMITORIES"],
@@ -408,9 +412,11 @@ export default function TheLodgePage() {
                       ["🍽", "DINING ROOM"],
                       ["🔥", "FIREPLACE"],
                     ].map(([icon, text]) => (
-                      <div key={text} className="flex items-center gap-2.5">
-                        <span className="text-base">{icon}</span>
-                        <span className="text-[11px] text-charcoal/75 font-medium tracking-[0.08em] leading-relaxed">
+                      <div key={text} className="flex items-center gap-space-3">
+                        <span className="text-2xl leading-none md:text-3xl">
+                          {icon}
+                        </span>
+                        <span className="text-[13px] text-charcoal/75 font-medium tracking-[0.08em] leading-snug">
                           {text}
                         </span>
                       </div>
@@ -434,6 +440,146 @@ export default function TheLodgePage() {
           </RevealOnScroll>
         </div>
       </section>
+
+      {/* =========================================================
+          9. HISTORY OF THE CHALET
+          Added 2026-08-28 at Mathieu's request ("May be at the bottom of
+          THE LODGE?"). Copy supplied by the client, used verbatim.
+
+          Presentation splits the source text by what kind of information
+          it is: the Krogh years are a story, so they run as two-column
+          editorial prose; the ownership chain is a list of dates, so it
+          runs as a timeline. Set on bg-forest to separate it from the
+          present-day sections above and signal a different register.
+
+          Image is hero-bw-facade-east.jpg — the same Swiss-style facade
+          the text describes, and already near-monochrome.
+          ========================================================= */}
+      <section className="w-full bg-forest">
+
+        {/* Full-bleed facade, title overlaid */}
+        <div className="relative aspect-[16/9] w-full overflow-hidden md:aspect-[21/9]">
+          <Image
+            src="/images/hero/hero-bw-facade-east.jpg"
+            alt="The east facade of the Bjorkasen hunting lodge in winter"
+            fill
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-gradient-to-t from-forest via-forest/45 to-charcoal/25"
+          />
+          <div className="absolute inset-x-0 bottom-0 px-space-4 pb-space-8 md:px-space-8 md:pb-space-12 lg:px-space-12">
+            <div className="mx-auto max-w-[1440px]">
+              <p className="text-eyebrow uppercase tracking-[0.12em] text-snow/70 mb-space-2">
+                SINCE 1900
+              </p>
+              <h2 className="font-display text-display-m text-snow md:text-display-l">
+                History of the chalet
+              </h2>
+            </div>
+          </div>
+        </div>
+
+        <div className="mx-auto max-w-[1440px] px-space-4 py-space-12 md:px-space-8 md:py-space-16 lg:px-space-12">
+
+          {/* Lead — how it began */}
+          <div className="max-w-[60ch] mb-space-12 md:mb-space-16">
+            <p className="font-display text-heading-s italic leading-snug text-snow">
+              Early in 1900, the industrialist, General Manager Georg von Krogh,
+              was a guest at Lauvasen Fjellstue. Krogh was the head of the then
+              large oil company Eagle Oil.
+            </p>
+            <p className="mt-space-6 text-body-l leading-relaxed text-snow/80">
+              As an avid hunter and fisherman, he fell in love with nature, and
+              gradually he quickly acquired the properties he wanted. The
+              &ldquo;Hunting Castle&rdquo; was built in the early 1900s in the
+              well-known Swiss style.
+            </p>
+          </div>
+
+          {/* The Krogh years — editorial two columns */}
+          <div className="grid grid-cols-1 gap-space-8 md:grid-cols-2 md:gap-space-16">
+            <div className="space-y-space-6 text-body-m leading-relaxed text-snow/75 md:text-body-l">
+              <p>
+                In order for Krogh to run his business as an oil trader from the
+                USA to the European market, he needed a telephone, and he had
+                lines laid from the village up to Bjorkasen. Krogh stayed at
+                Bjorkasen for two periods each year, from St. Hans to November
+                and from February to May.
+              </p>
+              <p>
+                For many years, Karl Simastuen was employed as a watchman for
+                Krogh, he carried out all the work that came his way, as well as
+                the operation of the property. It took 30&ndash;40 fathoms of
+                wood in the season, and making coffee every morning at seven was
+                standard. Krogh brought his own secretary with him, so Karl had
+                to travel to Hundorp by mail every other day.
+              </p>
+            </div>
+
+            <div className="space-y-space-6 text-body-m leading-relaxed text-snow/75 md:text-body-l">
+              <p>
+                Magda Fruktblom was employed as a cook, and since Krogh had many
+                visits from foreign industrialists, dinners with grouse and hare
+                were often on the menu. A maid was also employed at Bjorkasen.
+              </p>
+              <p>
+                As a curiosity, it can be stated that only Krogh and the
+                &ldquo;girls&rdquo; lived in the &ldquo;castle&rdquo;. There was
+                also a lot of activity at Bjorkasen during the Second World War.
+              </p>
+            </div>
+          </div>
+
+          {/* Ownership chain — timeline */}
+          <div className="mt-space-16 border-t border-snow/20 pt-space-12">
+            <p className="text-eyebrow uppercase tracking-[0.12em] text-snow/60 mb-space-8">
+              CHANGING HANDS
+            </p>
+
+            <ol className="space-y-space-8">
+              {[
+                {
+                  year: "1940s",
+                  text: "Krogh died in the late 1940s, and his daughter Hedwig von Krogh sold the property to Israel Krupp, a courier for Martin Tranmael and a member of the defence staff after the war. It is said that his interest in Bjorkasen was zero, and he only stayed there one night.",
+                },
+                {
+                  year: "1959",
+                  text: "Krupp sold Bjorkasen to the Norwegian Iron & Metall Association on 30 October 1959.",
+                },
+                {
+                  year: "1959–1985",
+                  text: "The management of the Norwegian Iron & Metall Association used Bjorkasen for important meetings with heads of state from many countries.",
+                },
+                {
+                  year: "1985–2013",
+                  text: "Bjorkasen was available to members of the Gjovik and Raufoss Iron & Metall Association.",
+                },
+                {
+                  year: "2013",
+                  text: "Since 2013, Bjorkasen has been privately owned.",
+                },
+              ].map((entry) => (
+                <li
+                  key={entry.year}
+                  className="grid grid-cols-1 gap-space-2 border-b border-snow/10 pb-space-8 last:border-b-0 last:pb-0 md:grid-cols-[10rem_1fr] md:gap-space-8"
+                >
+                  <span className="font-display text-heading-s leading-none text-snow">
+                    {entry.year}
+                  </span>
+                  <p className="text-body-m leading-relaxed text-snow/75 md:text-body-l">
+                    {entry.text}
+                  </p>
+                </li>
+              ))}
+            </ol>
+          </div>
+
+        </div>
+      </section>
+
     </SiteShell>
   );
 }

@@ -7,7 +7,7 @@ import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { Accordion } from "@/components/ui/Accordion";
 import { BottomScrim } from "@/components/ui/BottomScrim";
 import { SITE_NAV_ITEMS } from "@/lib/siteNav";
-import { HEADER_LOGO_V4 } from "@/lib/logoV4";
+import { HEADER_LOGO_V4, FULL_LOGO_V4 } from "@/lib/logoV4";
 import { LETS_TALK_CONTENT } from "@/lib/content/letsTalk";
 import { LetsTalkForm } from "@/components/sections/LetsTalkForm";
 
@@ -68,7 +68,7 @@ export default function LetsTalkPage() {
       </section>
 
       {/* 2. HOSTS — BJØRN & MATHIEU */}
-      <section className="bg-snow py-space-10 md:py-space-10">
+      <section className="bg-snow py-space-8 md:py-space-12">
 
         {/* Bjørn & Mathieu */}
         <Container>
@@ -135,109 +135,95 @@ export default function LetsTalkPage() {
 
           </RevealOnScroll>
         </Container>
+      </section>
 
+      {/* =========================================================
+          TOGETHER — premium editorial layout.
+          Replaced two earlier variants (image-with-text-below and a
+          centered layout) that were both rendering, so TOGETHER appeared
+          twice on the page. Tokens corrected to the design system:
+          text-heading-m, space-5, space-10 and space-24 do not exist
+          (scale is 1,2,3,4,6,8,12,16,20).
+          ========================================================= */}
+      <RevealOnScroll variant="fade" durationMs={800}>
+        <section className="w-full bg-cream">
 
-        {/* =========================================================
-    TOGETHER — ONE WIDE IMAGE WITH BALANCED TEXT
-    ========================================================= */}
+          {/* Top large image */}
+          <div className="relative aspect-[3/1] min-h-[260px] w-full overflow-hidden md:min-h-[340px]">
+            <Image
+              src="/images/hosts/host-together.jpg"
+              alt="Bjørn and Mathieu standing in front of the REFUGE61 lodge"
+              fill
+              sizes="100vw"
+              className="object-cover object-center"
+            />
+            <div aria-hidden="true" className="absolute inset-0 bg-charcoal/5" />
+          </div>
 
-        <RevealOnScroll variant="fade" durationMs={800}>
+          <div className="mx-auto max-w-[1440px] px-space-4 py-space-16 md:px-space-8 md:py-space-20">
 
-          <div className="relative w-full overflow-hidden">
-
-            {/* Wide Image */}
-            <div className="relative w-full aspect-[21/9] min-h-[520px]">
-
-              <Image
-                src="/images/hosts/host-together.jpg"
-                alt="Bjørn and Mathieu standing in front of the REFUGE61 lodge"
-                fill
-                priority
-                sizes="100vw"
-                className="object-cover object-center"
-              />
-
-              {/* Dark overlay */}
-              <div className="absolute inset-0 bg-black/20" />
-
-
-              {/* ===================================================
-          LEFT SIDE TEXT
-          =================================================== */}
-
-              <div className="absolute inset-y-0 left-0 z-10 flex w-[30%] items-center px-space-6 md:px-space-10 lg:px-space-14">
-
-                <div className="text-white max-w-md">
-
-                  {/* Heading */}
-                  <h2 className="text-heading-s uppercase mb-space-4">
-                    {hosts.together.name}
-                  </h2>
-
-                  {/* Line */}
-                  <div className="w-16 h-[2px] bg-white/80 mb-space-6" />
-
-                  {/* Left Text */}
-                  <div className="text-body-m md:text-body-l space-y-space-4">
-
-                    <p>{hosts.together.bio[0]}</p>
-
-                    <p>{hosts.together.bio[1]}</p>
-
-                    <p>
-                      REFUGE61° grew from that shared vision. It is not about
-                      following a programme or ticking boxes.
-                    </p>
-
-                  </div>
-
-                </div>
-
+            {/* Section header — TOGETHER left, brand lockup right.
+                Per Mathieu 2026-08-28: larger type for TOGETHER, and the full
+                logo (which already carries "Back to Basics") on the right,
+                replacing the separate line of text that used to sit at the
+                foot of the right column. */}
+            <div className="mb-space-12 grid grid-cols-1 items-center gap-space-6 md:mb-space-16 md:grid-cols-[5fr_7fr] md:gap-space-16">
+              <div className="flex items-center gap-space-4">
+                <div className="h-[2px] w-12 shrink-0 bg-charcoal/80" />
+                <h2 className="font-display text-display-m uppercase tracking-widest text-charcoal">
+                  {hosts.together.name}
+                </h2>
               </div>
 
+              {/* Sits in the same 7fr column as the body copy below, so the
+                  lockup lines up with that text instead of drifting out to
+                  the far page edge. */}
+              <Image
+                src={FULL_LOGO_V4.src}
+                alt={FULL_LOGO_V4.alt}
+                width={FULL_LOGO_V4.width}
+                height={FULL_LOGO_V4.height}
+                className="h-16 w-auto md:h-20"
+              />
+            </div>
 
-              {/* ===================================================
-          RIGHT SIDE TEXT
-          =================================================== */}
+            {/* Asymmetrical two-column layout */}
+            <div className="grid grid-cols-1 items-start gap-space-12 md:grid-cols-[5fr_7fr] md:gap-space-16">
 
-              <div className="absolute inset-y-0 right-0 z-10 flex w-[30%] items-center px-space-6 md:px-space-10 lg:px-space-14">
+              {/* Left — pull quote */}
+              <div className="space-y-space-6">
+                <p className="font-display text-heading-s italic leading-snug text-charcoal">
+                  {hosts.together.bio[0]}
+                </p>
+                <p className="text-body-m leading-relaxed text-charcoal/70 md:text-body-l">
+                  REFUGE61° grew from that shared vision. It is not about
+                  following a programme or ticking boxes.
+                </p>
+              </div>
 
-                <div className="text-white max-w-md">
-
-                  {/* Right Text */}
-                  <div className="text-body-m md:text-body-l space-y-space-4">
-
-                    <p>
-                      It is about living together for a few days in a special
-                      place, getting outside, sharing meals and experiences,
-                      and enjoying the rhythm of winter in the Norwegian
-                      mountains.
-                    </p>
-
-                    <p>
-                      With REFUGE61°, we want to create the kind of week we
-                      would personally love to experience: simple, active and
-                      authentic, with time outdoors, good food, shared moments
-                      and the freedom to enjoy the mountains at your own pace.
-                    </p>
-
-                    <p>{hosts.together.bio[4]}</p>
-
-                  </div>
-
-                </div>
+              {/* Right — detail */}
+              <div className="space-y-space-6 text-body-m leading-relaxed text-charcoal/80 md:text-body-l">
+                <p>
+                  It is about living together for a few days in a special place,
+                  getting outside, sharing meals and experiences, and enjoying
+                  the rhythm of winter in the Norwegian mountains.
+                </p>
+                <p>
+                  With REFUGE61°, we want to create the kind of week we would
+                  personally love to experience: simple, active and authentic,
+                  with time outdoors, good food, shared moments and the freedom
+                  to enjoy the mountains at your own pace.
+                </p>
 
               </div>
 
             </div>
-
           </div>
-
-        </RevealOnScroll>
-      </section>
+        </section>
+      </RevealOnScroll>
 
       {/* 3. BEFORE THE QUESTIONNAIRE */}
-      <section className="bg-cream py-space-16 md:py-space-20 text-center">
+      <section className="bg-cream py-space-8 md:py-space-12 text-center">
         <Container>
           <RevealOnScroll variant="fade" durationMs={800}>
             <div className="max-w-2xl mx-auto">
@@ -266,7 +252,7 @@ export default function LetsTalkPage() {
       </section>
 
       {/* 4. QUESTIONNAIRE */}
-      <section className="bg-snow py-space-16 md:py-space-20">
+      <section className="bg-snow py-space-8 md:py-space-12">
         <Container>
             <div className="max-w-3xl mx-auto text-center mb-space-12">
               <h2 className="text-heading-s text-charcoal">
@@ -279,7 +265,7 @@ export default function LetsTalkPage() {
       </section>
 
       {/* 7. WHAT HAPPENS NEXT */}
-      <section className="bg-cream py-space-16 md:py-space-20 border-t border-charcoal/10">
+      <section className="bg-cream py-space-8 md:py-space-12 border-t border-charcoal/10">
         <Container>
           <RevealOnScroll variant="fade" durationMs={800}>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-space-8 md:gap-space-12">
@@ -302,7 +288,7 @@ export default function LetsTalkPage() {
       </section>
 
       {/* 8. FAQ */}
-      <section className="bg-snow py-space-16 md:py-space-20">
+      <section className="bg-snow py-space-8 md:py-space-12">
         <Container>
           <RevealOnScroll variant="fade" durationMs={800}>
             <div className="max-w-3xl mx-auto">
