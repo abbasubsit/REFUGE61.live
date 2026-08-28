@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/Button";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
+import { type Locale, t } from "@/lib/i18n";
 
 /**
  * The page's last, smallest, quietest moment — deliberately imageless
@@ -18,7 +19,7 @@ import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
  * client, and the brief for this section asked for one heading, one
  * sentence, and one button, not a form.
  */
-export function Contact() {
+export function Contact({ locale = "en" }: { locale?: Locale } = {}) {
   return (
     <section id="contact" aria-labelledby="contact-heading" className="bg-cream py-space-12 md:py-space-20">
       <RevealOnScroll
@@ -29,11 +30,9 @@ export function Contact() {
         <h2
           id="contact-heading"
           className="font-display text-display-m text-charcoal md:text-display-l"
-        >
-          Your week begins here.
-        </h2>
+        >{t(locale, "Your week begins here.")}</h2>
         <p className="mt-space-4 max-w-[38ch] text-body-l text-charcoal/80">
-          Write to us, and we&apos;ll reply personally.
+          {t(locale, "Write to us, and we'll reply personally.")}
         </p>
         <Button href="mailto:hello@refuge61.com" variant="primary" className="mt-space-8">
           Start a conversation

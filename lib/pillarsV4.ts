@@ -1,3 +1,5 @@
+import { type Locale, t } from "@/lib/i18n";
+
 export type PillarV4 = {
   id: string;
   eyebrow: string;
@@ -29,38 +31,54 @@ export type PillarV4 = {
  * no face is visible. Replaces lifestyle-rush-06.jpg (the card game),
  * which stays in the library and is still used by Version 2/3.
  */
-export const PILLARS_V4: PillarV4[] = [
-  {
-    id: "move",
-    eyebrow: "Move",
-    headline: "Move through the landscape.",
-    body: "Each day begins outside. Ski, walk, explore — at your own pace, together with the group or alone. No programme to complete, no performance to prove. Just the pleasure of moving through a vast winter landscape.",
-    image: "/images/story/move.jpeg",
-    alt: "A cross-country skier crossing a wide snow landscape near REFUGE61.",
-  },
-  {
-    id: "gather",
-    eyebrow: "Gather",
-    headline: "Come back together.",
-    body: "Life at REFUGE61 happens around the table. We cook together, share the meal, open a bottle, talk and laugh. There is no staff behind the scenes — everyone takes part in making the house come alive.",
-    image: "/images/lifestyle/lifestyle-rush-09-vegetables.jpeg",
-    alt: "Several people peeling potatoes, carrots and parsnips together along a kitchen counter, photographed from the shoulders down.",
-  },
-  {
-    id: "reset",
-    eyebrow: "Reset",
-    headline: "Make room for something else.",
-    body: "A week away from schedules, noise and everyday routines. Time to slow down, read, sit by the fire, step outside or simply do nothing. Sometimes, a little distance is all we need.",
-    image: "/images/story/rest.png",
-    alt: "An empty snow-covered terrace with a stone fireplace, quiet and still.",
-  },
-];
+export function pillarsV4(locale: Locale): PillarV4[] {
+  return [
+    {
+      id: "move",
+      eyebrow: t(locale, "Move"),
+      headline: t(locale, "Move through the landscape."),
+      body: t(
+        locale,
+        "Each day begins outside. Ski, walk, explore — at your own pace, together with the group or alone. No programme to complete, no performance to prove. Just the pleasure of moving through a vast winter landscape.",
+      ),
+      image: "/images/story/move.jpeg",
+      alt: "A cross-country skier crossing a wide snow landscape near REFUGE61.",
+    },
+    {
+      id: "gather",
+      eyebrow: t(locale, "Gather"),
+      headline: t(locale, "Come back together."),
+      body: t(
+        locale,
+        "Life at REFUGE61 happens around the table. We cook together, share the meal, open a bottle, talk and laugh. There is no staff behind the scenes — everyone takes part in making the house come alive.",
+      ),
+      image: "/images/lifestyle/lifestyle-rush-09-vegetables.jpeg",
+      alt: "Several people peeling potatoes, carrots and parsnips together along a kitchen counter, photographed from the shoulders down.",
+    },
+    {
+      id: "reset",
+      eyebrow: t(locale, "Reset"),
+      headline: t(locale, "Make room for something else."),
+      body: t(
+        locale,
+        "A week away from schedules, noise and everyday routines. Time to slow down, read, sit by the fire, step outside or simply do nothing. Sometimes, a little distance is all we need.",
+      ),
+      image: "/images/story/rest.png",
+      alt: "An empty snow-covered terrace with a stone fireplace, quiet and still.",
+    },
+  ];
+}
 
-export const EXPEDITION_V4: PillarV4 = {
-  id: "expedition",
-  eyebrow: "Go further",
-  headline: "Some days take us further.",
-  body: "When conditions allow, we leave the lodge for a longer journey into the mountains — on skis, on foot, carrying what we need for the day. Not a race and not a performance. Simply the pleasure of going somewhere together.",
-  image: "/images/lifestyle/lifestyle-rush-08.jpg",
-  alt: "A tent glowing orange at dusk in a snow-covered mountain bowl, a ski track leading toward it.",
-};
+export function expeditionV4(locale: Locale): PillarV4 {
+  return {
+    id: "expedition",
+    eyebrow: t(locale, "Go further"),
+    headline: t(locale, "Some days take us further."),
+    body: t(
+      locale,
+      "When conditions allow, we leave the lodge for a longer journey into the mountains — on skis, on foot, carrying what we need for the day. Not a race and not a performance. Simply the pleasure of going somewhere together.",
+    ),
+    image: "/images/lifestyle/lifestyle-rush-08.jpg",
+    alt: "A tent glowing orange at dusk in a snow-covered mountain bowl, a ski track leading toward it.",
+  };
+}

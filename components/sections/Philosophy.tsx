@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { AiLabel } from "@/components/ui/AiLabel";
+import { type Locale, t } from "@/lib/i18n";
 
 /**
  * Purpose: state what REFUGE61 is *for*, once, in prose — not to sell a
@@ -20,7 +21,7 @@ import { AiLabel } from "@/components/ui/AiLabel";
  * row's height is set entirely by the (short, by design) text column's
  * content, and the image stretches to match it — full-bleed, no letterboxing.
  */
-export function Philosophy() {
+export function Philosophy({ locale = "en" }: { locale?: Locale } = {}) {
   return (
     <section id="philosophy" aria-labelledby="philosophy-heading" className="bg-snow">
       <RevealOnScroll variant="fade" durationMs={800}>
@@ -40,14 +41,8 @@ export function Philosophy() {
             <h2
               id="philosophy-heading"
               className="max-w-[16ch] font-display text-display-m italic text-charcoal"
-            >
-              Better shared than admired.
-            </h2>
-            <p className="mt-space-4 max-w-[42ch] text-body-l text-charcoal/80">
-              REFUGE61 sits above the treeline for those who come to move
-              through the mountains by day and gather around the table by
-              night.
-            </p>
+            >{t(locale, "Better shared than admired.")}</h2>
+            <p className="mt-space-4 max-w-[42ch] text-body-l text-charcoal/80">{t(locale, "REFUGE61 sits above the treeline for those who come to move through the mountains by day and gather around the table by night.")}</p>
           </div>
         </div>
       </RevealOnScroll>

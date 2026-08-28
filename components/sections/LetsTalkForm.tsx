@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { LETS_TALK_CONTENT } from "@/lib/content/letsTalk";
+import { letsTalkContent } from "@/lib/content/letsTalk";
+import { type Locale, t } from "@/lib/i18n";
 import { Button } from "@/components/ui/Button";
 
 type FormState = {
@@ -38,11 +39,11 @@ const initialFormState: FormState = {
   consent: false,
 };
 
-export function LetsTalkForm() {
+export function LetsTalkForm({ locale = "en" }: { locale?: Locale } = {}) {
   const [formData, setFormData] = useState<FormState>(initialFormState);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const { form } = LETS_TALK_CONTENT;
+  const { form } = letsTalkContent(locale);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -221,11 +222,7 @@ export function LetsTalkForm() {
 
 {/* QUESTIONNAIRE INTRO */}
 <div className="mt-0 mb-space-2">
-  <p className="text-body-m text-[#173D2A] italic text-left max-w-2xl mx-auto">
-    We invite you to answer the questionnaire below, which is entirely
-    optional. It is only intended to help us understand if REFUGE61 is
-    right for you.
-  </p>
+  <p className="text-body-m text-[#173D2A] italic text-left max-w-2xl mx-auto">{t(locale, "We invite you to answer the questionnaire below, which is entirely optional. It is only intended to help us understand if REFUGE61 is right for you.")}</p>
 </div>
 
       {/* AGE */}
@@ -436,7 +433,7 @@ export function LetsTalkForm() {
 
       {/* PRIVACY */}
       <fieldset>
-        <legend className={legendClasses}>PRIVACY</legend>
+        <legend className={legendClasses}>{t(locale, "PRIVACY")}</legend>
 
         <div className="flex items-start">
           <input
@@ -460,9 +457,7 @@ export function LetsTalkForm() {
             <a
               href="/privacy-policy"
               className="underline hover:text-forest focus-visible:ring-2 focus-visible:ring-forest focus-visible:outline-none"
-            >
-              Privacy Policy
-            </a>
+            >{t(locale, "Privacy Policy")}</a>
             .
           </label>
         </div>

@@ -1,4 +1,5 @@
 import type { NavItem } from "@/lib/navigation";
+import { type Locale, localePrefix, t } from "@/lib/i18n";
 
 /**
  * /practical-information only — passed explicitly via SiteShell's navItems
@@ -22,3 +23,19 @@ export const SITE_NAV_ITEMS: NavItem[] = [
   { label: "Practical Information", href: "/practical-information" },
   { label: "Let's Talk", href: "/lets-talk" },
 ];
+
+/**
+ * The same four destinations, labelled and prefixed for `locale`.
+ *
+ * French keeps the English URL slugs (/fr/the-lodge rather than
+ * /fr/le-lodge): the slugs are already circulating in the client's emails,
+ * and translating them would double the number of routes to keep in step
+ * for no benefit the reviewers will notice.
+ */
+export function siteNavItems(locale: Locale): NavItem[] {
+  const prefix = localePrefix(locale);
+  return SITE_NAV_ITEMS.map((item) => ({
+    label: t(locale, item.label),
+    href: item.href === "/" ? prefix || "/" : `${prefix}${item.href}`,
+  }));
+}

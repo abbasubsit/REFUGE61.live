@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { SITE_NAV_ITEMS } from "@/lib/siteNav";
+import { siteNavItems } from "@/lib/siteNav";
 import { HEADER_LOGO_V4 } from "@/lib/logoV4";
+import { type Locale, localePrefix, t } from "@/lib/i18n";
 
 /**
  * No footer component existed in this project before /practical-information
@@ -13,11 +14,11 @@ import { HEADER_LOGO_V4 } from "@/lib/logoV4";
  * Version 4's solid-nav state and BrandSignature — no new logo variant
  * introduced.
  */
-export function SiteFooter() {
+export function SiteFooter({ locale = "en" }: { locale?: Locale } = {}) {
   return (
     <footer className="border-t border-charcoal/10 bg-snow py-space-8">
       <div className="mx-auto flex max-w-[1440px] flex-col items-center gap-space-6 px-space-4 md:px-space-6 lg:px-space-8">
-        <Link href="/" aria-label="REFUGE61 — home">
+        <Link href={localePrefix(locale) || "/"} aria-label="REFUGE61 — home">
           <Image
             src={HEADER_LOGO_V4.solid.src}
             alt={HEADER_LOGO_V4.alt}
@@ -28,7 +29,7 @@ export function SiteFooter() {
         </Link>
 
         <nav aria-label="Footer" className="flex flex-wrap items-center justify-center gap-x-space-6 gap-y-space-2">
-          {SITE_NAV_ITEMS.map((item) => (
+          {siteNavItems(locale).map((item) => (
             <Link
               key={item.href}
               href={item.href}
@@ -40,9 +41,7 @@ export function SiteFooter() {
           <Link
             href="/terms"
             className="text-eyebrow uppercase tracking-[0.12em] text-charcoal/70 transition-colors duration-200 ease-editorial hover:text-charcoal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest"
-          >
-            Terms & Conditions
-          </Link>
+          >{t(locale, "Terms & Conditions")}</Link>
         </nav>
       </div>
     </footer>

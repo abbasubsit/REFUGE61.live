@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { BottomScrim } from "@/components/ui/BottomScrim";
+import { type Locale, t } from "@/lib/i18n";
 
 const VIDEO_SRC = "/videos/refuge61-teaser.mp4";
 const POSTER_SRC = "/images/hero/hero-aerial-winter-wide.jpg";
@@ -22,7 +23,7 @@ const ICON_BUTTON =
  * autoplays for mobile visitors or anyone with prefers-reduced-motion set,
  * regardless of viewport width.
  */
-export function CinematicVideo() {
+export function CinematicVideo({ locale = "en" }: { locale?: Locale } = {}) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -121,9 +122,7 @@ export function CinematicVideo() {
       className="bg-snow"
     >
       <div ref={wrapperRef} className="relative h-[85vh] w-full overflow-hidden bg-charcoal">
-        <h2 id="film-heading" className="sr-only">
-          Film
-        </h2>
+        <h2 id="film-heading" className="sr-only">{t(locale, "Film")}</h2>
 
         <div
           className={`absolute inset-0 transition-opacity duration-[400ms] ease-editorial motion-reduce:transition-none ${
@@ -158,7 +157,7 @@ export function CinematicVideo() {
         <BottomScrim />
 
         <p className="absolute bottom-space-4 left-space-4 text-eyebrow uppercase tracking-[0.12em] text-snow md:bottom-space-6 md:left-space-6">
-          Winter, Bjørkåsen
+          {t(locale, "Winter, Bjørkåsen")}
         </p>
 
         {needsTapToPlay && (
