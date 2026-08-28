@@ -261,7 +261,7 @@ export function LodgePage({ locale }: { locale: Locale }) {
                 sizes="(min-width: 768px) 55vw, 100vw"
                 className="object-cover"
               />
-              <AiLabel src="/images/client-update/bjorkasen_03.jpeg" />
+              <AiLabel src="/images/client-update/bjorkasen_03.jpg" />
             </div>
           </div>
         </RevealOnScroll>
@@ -307,13 +307,13 @@ export function LodgePage({ locale }: { locale: Locale }) {
             </div>
             <div className="relative aspect-[4/5] md:aspect-auto md:w-[55%] md:min-h-[85vh]">
               <Image
-                src="/images/client-update/Soiree Feu.jpg"
+                src="/images/client-update/Soiree Feu.JPG"
                 alt="People sitting by the fireplace"
                 fill
                 sizes="(min-width: 768px) 55vw, 100vw"
                 className="object-cover"
               />
-              <AiLabel src="/images/client-update/Soiree Feu.png" />
+              <AiLabel src="/images/client-update/Soiree Feu.JPG" />
             </div>
           </div>
         </RevealOnScroll>

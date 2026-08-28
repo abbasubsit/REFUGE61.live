@@ -223,7 +223,7 @@ export default function PracticalInformationV2Page() {
           <InfoBlock
             eyebrow="Ski From The Door"
             headline="650 kilometres of tracks. Twenty metres from the lodge."
-            imageSrc="/images/practical/650km.png"
+            imageSrc="/images/practical/650km.jpeg"
             imageAlt="Cross-country skiing near REFUGE61"
           >
             <p>
