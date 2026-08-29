@@ -110,15 +110,15 @@ export function PracticalPage({ locale }: { locale: Locale }) {
           fill+object-cover: the map carries baked-in labels and a legend,
           so any crop would cut information out of it.
           ========================================================= */}
-      <section className="w-full bg-cream px-space-4 py-space-12 md:px-space-8 md:py-space-16 lg:px-space-16">
-        <div className="mx-auto max-w-[1200px]">
+      <section className="w-full bg-cream px-space-2 py-space-12 md:px-space-4 md:py-space-16 lg:px-space-8">
+        <div className="mx-auto max-w-[1600px]">
           <RevealOnScroll variant="fade" durationMs={800}>
             <Image
               src="/images/practical/map-norway-refuge61.png"
               alt="Map of southern Norway showing REFUGE61 at Bjorkaisen, north of Vinstra on the 61st parallel. Fly to Oslo, then approximately 2 hours 30 minutes by train from Oslo to Vinstra, then 45 minutes by car from Vinstra to the lodge. Transfers from Vinstra railway station are organised by the hosts."
               width={1536}
               height={1024}
-              sizes="(min-width: 1200px) 1200px, 100vw"
+              sizes="(min-width: 1600px) 1600px, 100vw"
               className="h-auto w-full"
             />
           </RevealOnScroll>
