@@ -10,6 +10,8 @@
 
 import { FR_BY_ENGLISH } from "@/lib/content/copy.fr";
 import { FR_EXTRA } from "@/lib/content/copy.fr.extra";
+import { DA_BY_ENGLISH } from "@/lib/content/copy.da";
+import { DA_EXTRA } from "@/lib/content/copy.da.extra";
 
 // The generated table plus the hand-written companions for strings whose
 // rendered form differs from their source form (CSS uppercasing, sentences
@@ -19,7 +21,17 @@ const FR = new Map<string, string>([
   ...Object.entries(FR_EXTRA),
 ]);
 
-export const LOCALES = ["en", "fr"] as const;
+const DA = new Map<string, string>([
+  ...DA_BY_ENGLISH,
+  ...Object.entries(DA_EXTRA),
+]);
+
+const TABLES: Record<Exclude<Locale, "en">, ReadonlyMap<string, string>> = {
+  fr: FR,
+  da: DA,
+};
+
+export const LOCALES = ["en", "fr", "da"] as const;
 export type Locale = (typeof LOCALES)[number];
 
 export const DEFAULT_LOCALE: Locale = "en";
@@ -33,7 +45,7 @@ export const DEFAULT_LOCALE: Locale = "en";
  */
 export function t(locale: Locale, en: string): string {
   if (locale === "en") return en;
-  return FR.get(en) ?? en;
+  return TABLES[locale].get(en) ?? en;
 }
 
 /** Curried form, for components that translate many strings. */
@@ -52,4 +64,5 @@ export function localePrefix(locale: Locale): string {
 export const LOCALE_LABELS: Record<Locale, string> = {
   en: "EN",
   fr: "FR",
+  da: "DA",
 };

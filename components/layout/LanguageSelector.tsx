@@ -13,9 +13,10 @@ type LanguageSelectorProps = {
  * approved the French copy and asked for the French pages to go up so his
  * reviewers could check them.
  *
- * French is served under /fr with the English URL slugs (/fr/the-lodge, not
- * /fr/le-lodge), so the counterpart of any page is found by adding or
- * removing that one prefix -- no route table to keep in step.
+ * Each non-English locale is served under its own prefix with the English URL
+ * slugs (/fr/the-lodge, not /fr/le-lodge), so the counterpart of any page is
+ * found by swapping that one prefix -- no route table to keep in step, and
+ * adding a language needs no change here.
  *
  * Both languages are always rendered as links, with the current one marked
  * aria-current and visually held at full strength. A page that exists in
@@ -25,16 +26,21 @@ type LanguageSelectorProps = {
 export function LanguageSelector({ className = "" }: LanguageSelectorProps) {
   const pathname = usePathname() || "/";
 
-  const isFrench = pathname === "/fr" || pathname.startsWith("/fr/");
-  const current: Locale = isFrench ? "fr" : "en";
+  // Which locale this path is in, read from its prefix rather than assumed:
+  // "/fr/the-lodge" is French, "/da" is Danish, anything else is English.
+  const current: Locale =
+    LOCALES.find(
+      (l) => l !== "en" && (pathname === `/${l}` || pathname.startsWith(`/${l}/`)),
+    ) ?? "en";
 
   // The path with any locale prefix stripped: "/fr/the-lodge" -> "/the-lodge",
   // "/fr" -> "/".
-  const basePath = isFrench ? pathname.slice(3) || "/" : pathname;
+  const basePath =
+    current === "en" ? pathname : pathname.slice(current.length + 1) || "/";
 
   const hrefFor = (locale: Locale) => {
     if (locale === "en") return basePath;
-    return basePath === "/" ? "/fr" : `/fr${basePath}`;
+    return basePath === "/" ? `/${locale}` : `/${locale}${basePath}`;
   };
 
   return (
