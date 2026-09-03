@@ -12,6 +12,9 @@ type ButtonProps = {
   onClick?: () => void;
   type?: "button" | "submit";
   ariaLabel?: string;
+  /** <button> only — a link cannot be disabled. Used by the Let's Talk form
+   *  while an enquiry is in flight, so it cannot be submitted twice. */
+  disabled?: boolean;
 };
 
 // design-system.md §4 — two variants only, sharp 2px corners, no shadows/gradients.
@@ -45,8 +48,11 @@ export function Button({
   onClick,
   type = "button",
   ariaLabel,
+  disabled = false,
 }: ButtonProps) {
-  const classes = `${BASE_STYLES} ${VARIANT_STYLES[variant]} ${className}`.trim();
+  const classes = `${BASE_STYLES} ${VARIANT_STYLES[variant]} ${
+    disabled ? "cursor-not-allowed opacity-60" : ""
+  } ${className}`.trim();
 
   if (href && EXTERNAL_HREF_PATTERN.test(href)) {
     return (
@@ -65,7 +71,13 @@ export function Button({
   }
 
   return (
-    <button type={type} className={classes} onClick={onClick} aria-label={ariaLabel}>
+    <button
+      type={type}
+      className={classes}
+      onClick={onClick}
+      aria-label={ariaLabel}
+      disabled={disabled}
+    >
       {children}
     </button>
   );

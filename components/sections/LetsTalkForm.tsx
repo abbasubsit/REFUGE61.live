@@ -42,6 +42,8 @@ const initialFormState: FormState = {
 export function LetsTalkForm({ locale = "en" }: { locale?: Locale } = {}) {
   const [formData, setFormData] = useState<FormState>(initialFormState);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const { form } = letsTalkContent(locale);
 
@@ -72,12 +74,57 @@ export function LetsTalkForm({ locale = "en" }: { locale?: Locale } = {}) {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  /**
+   * Posts to /api/lets-talk, which emails the hosts.
+   *
+   * The thank-you screen is shown only when the server confirms the message
+   * was sent. It used to appear unconditionally, while the enquiry was
+   * discarded -- a guest was told they had been heard when no one had heard
+   * them.
+   */
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSending) return;
 
-    console.log("Form payload:", formData);
+    setError(null);
+    setIsSending(true);
 
-    setIsSubmitted(true);
+    try {
+      const response = await fetch("/api/lets-talk", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        return;
+      }
+
+      const body = (await response.json().catch(() => null)) as
+        | { error?: string }
+        | null;
+      setError(
+        body?.error === "not_configured"
+          ? t(
+              locale,
+              "The form is not able to send messages yet. Please write to us directly and we will reply.",
+            )
+          : t(
+              locale,
+              "Your message could not be sent. Please try again, or write to us directly.",
+            ),
+      );
+    } catch {
+      setError(
+        t(
+          locale,
+          "Your message could not be sent. Please check your connection and try again.",
+        ),
+      );
+    } finally {
+      setIsSending(false);
+    }
   };
 
   if (isSubmitted) {
@@ -465,9 +512,18 @@ export function LetsTalkForm({ locale = "en" }: { locale?: Locale } = {}) {
 
       {/* SUBMIT BUTTON */}
       <div className="flex flex-col items-center sm:items-start">
-        <Button type="submit" variant="primary">
-          {form.submit.button}
+        <Button type="submit" variant="primary" disabled={isSending}>
+          {isSending ? t(locale, "Sending…") : form.submit.button}
         </Button>
+
+        {error && (
+          <p
+            role="alert"
+            className="mt-space-4 max-w-lg text-body-m text-[#8a3f2a]"
+          >
+            {error}
+          </p>
+        )}
 
         <p className="mt-space-4 text-body-m text-charcoal max-w-lg">
           {form.submit.note}

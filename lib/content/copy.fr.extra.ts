@@ -79,4 +79,14 @@ export const FR_EXTRA: Readonly<Record<string, string>> = {
   Email: "E-mail",
   Country: "Pays",
   Age: "Âge",
+  // --- Let's Talk form states -------------------------------------------
+  // Added with the form's send route on 2026-08-29. These have no T-id: they
+  // are new UI, not part of the client's translation spreadsheet.
+  "Sending…": "Envoi…",
+  "The form is not able to send messages yet. Please write to us directly and we will reply.":
+    "Le formulaire ne peut pas encore envoyer de messages. Écrivez-nous directement et nous vous répondrons.",
+  "Your message could not be sent. Please try again, or write to us directly.":
+    "Votre message n'a pas pu être envoyé. Réessayez ou écrivez-nous directement.",
+  "Your message could not be sent. Please check your connection and try again.":
+    "Votre message n'a pas pu être envoyé. Vérifiez votre connexion et réessayez.",
 };
