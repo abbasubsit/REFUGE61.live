@@ -1162,5 +1162,605 @@
     }
    ]
   }
+ ],
+ "da": [
+  {
+   "heading": "1. Om REFUGE61",
+   "blocks": [
+    {
+     "kind": "p",
+     "text": "REFUGE61 er en uges vinteroplevelse i de norske fjelde med langrend, natur, enkelhed, fællesskab og livet på en fjeldhytte som omdrejningspunkt."
+    },
+    {
+     "kind": "p",
+     "text": "Opholdet løber fra lørdag til lørdag."
+    },
+    {
+     "kind": "p",
+     "text": "REFUGE61 er hverken et traditionelt hotelophold eller en klassisk guidet skirejse med et fast dagsprogram. Gæster og værter bor sammen på hytten, spiser sammen, laver mad sammen og bruger dagene på langrend og på at nyde vinterlandskabet."
+    },
+    {
+     "kind": "p",
+     "text": "Gæsterne kan frit vælge deres eget tempo og aktiviteter. Værterne skaber rammerne for ugen, rådgiver om ruter og muligheder, deler praktiske tips om langrend og tager med på udvalgte ture."
+    },
+    {
+     "kind": "p",
+     "text": "Ugen giver også mulighed for at deltage i en miniekspedition med én overnatning i vinterfjeldet."
+    },
+    {
+     "kind": "subheading",
+     "text": "Arrangør"
+    },
+    {
+     "kind": "address",
+     "lines": [
+      "REFUGE61°",
+      "name: Refuge61 Aps",
+      "CVR: 46711939",
+      "Adresse: Porskærvej 28, 8420 Knebel, Danmark",
+      "E-mail: [indsættes]",
+      "Telefon: +45 20 87 03 42"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "2. Varighed og indkvartering",
+   "blocks": [
+    {
+     "kind": "p",
+     "text": "Opholdet varer syv dage fra lørdag til lørdag. De konkrete datoer fremgår af den enkelte booking."
+    },
+    {
+     "kind": "p",
+     "text": "Hytten har syv dobbeltværelser og plads til op til 14 gæster."
+    },
+    {
+     "kind": "p",
+     "text": "Indkvartering sker normalt med to gæster på hvert værelse."
+    },
+    {
+     "kind": "p",
+     "text": "Enkeltrejsende, der booker delt indkvartering, kan blive indkvarteret sammen med en anden enkeltrejsende. Den gældende værelsesordning vil blive gjort tydelig for gæsten, inden bookingen bliver bindende."
+    },
+    {
+     "kind": "p",
+     "text": "Det er muligt at booke eget værelse mod et ekstra tillæg, så længe der er ledig kapacitet."
+    }
+   ]
+  },
+  {
+   "heading": "3. Hvad er inkluderet?",
+   "blocks": [
+    {
+     "kind": "p",
+     "text": "Prisen inkluderer:"
+    },
+    {
+     "kind": "p",
+     "text": "• ophold på hytten"
+    },
+    {
+     "kind": "p",
+     "text": "• morgenmad, frokost og aftensmad"
+    },
+    {
+     "kind": "p",
+     "text": "• transport fra Vinstra station til hytten ved ankomst"
+    },
+    {
+     "kind": "p",
+     "text": "• transport fra hytten til Vinstra station ved afrejse"
+    },
+    {
+     "kind": "p",
+     "text": "• langrendsski"
+    },
+    {
+     "kind": "p",
+     "text": "• skistøvler"
+    },
+    {
+     "kind": "p",
+     "text": "• skistave"
+    },
+    {
+     "kind": "p",
+     "text": "• relevant fælles udstyr til miniekspeditionen"
+    },
+    {
+     "kind": "p",
+     "text": "• aktiviteter under opholdet"
+    },
+    {
+     "kind": "p",
+     "text": "• miniekspedition med én overnatning"
+    },
+    {
+     "kind": "p",
+     "text": "• sengetøj"
+    },
+    {
+     "kind": "p",
+     "text": "• håndklæder"
+    },
+    {
+     "kind": "p",
+     "text": "• morgenkåbe."
+    },
+    {
+     "kind": "p",
+     "text": "Transport til og fra Vinstra er ikke inkluderet."
+    },
+    {
+     "kind": "p",
+     "text": "Gæsterne skal selv medbringe vinter- og skitøj, almindeligt tøj og fodtøj, personlig medicin og snacks."
+    },
+    {
+     "kind": "p",
+     "text": "Øl, vin og andre alkoholiske drikkevarer er ikke inkluderet. Gæsterne må medbringe alkohol til eget moderate forbrug."
+    }
+   ]
+  },
+  {
+   "heading": "4. Ankomst og afrejse",
+   "blocks": [
+    {
+     "kind": "p",
+     "text": "Gæsterne sørger selv for transport til og fra Vinstra."
+    },
+    {
+     "kind": "p",
+     "text": "REFUGE61 oplyser inden rejsen et anbefalet ankomsttidspunkt på Vinstra station. Den fælles transport til hytten planlægges med udgangspunkt i dette tidspunkt."
+    },
+    {
+     "kind": "p",
+     "text": "Hvis en gæst ikke kan ankomme på det anbefalede tidspunkt, skal alternative løsninger aftales med REFUGE61 på forhånd."
+    },
+    {
+     "kind": "p",
+     "text": "Samme princip gælder ved afrejse. REFUGE61 oplyser et anbefalet afrejsetidspunkt og sørger for transport fra hytten til Vinstra station."
+    },
+    {
+     "kind": "p",
+     "text": "Individuelle løsninger kan være mulige, hvor det praktisk kan lade sig gøre."
+    }
+   ]
+  },
+  {
+   "heading": "5. Måltider og fælles liv",
+   "blocks": [
+    {
+     "kind": "p",
+     "text": "Morgenmad, frokost og aftensmad er inkluderet."
+    },
+    {
+     "kind": "p",
+     "text": "REFUGE61 er et fælles ophold og ikke et traditionelt hotelophold. At tilberede mad, spise sammen og deltage i hverdagslivet på hytten er en del af konceptet."
+    },
+    {
+     "kind": "p",
+     "text": "Gæsterne inddeles i små madhold på cirka tre personer. Hvert hold står som udgangspunkt for at tilberede én aftensmad og én morgenmad i løbet af ugen."
+    },
+    {
+     "kind": "p",
+     "text": "Vi tilbyder varieret kost og tilstræber, at der er tilstrækkeligt med valgmuligheder til, at alle kan spise sig mætte."
+    },
+    {
+     "kind": "p",
+     "text": "REFUGE61 tilbereder normalt ikke individuelle måltider eller særskilte menuer tilpasset bestemte kostønsker eller diæter."
+    },
+    {
+     "kind": "p",
+     "text": "Gæster skal inden opholdet informere REFUGE61 om eventuelle fødevareallergier eller kostbehov, som det er vigtigt for os at kende til. Gæster med særlige kostbehov opfordres til at kontakte os inden booking, så de praktiske muligheder kan afklares."
+    }
+   ]
+  },
+  {
+   "heading": "6. Booking og betaling",
+   "blocks": [
+    {
+     "kind": "p",
+     "text": "Ved booking betales et depositum på 25 % af den samlede pris."
+    },
+    {
+     "kind": "p",
+     "text": "De resterende 75 % skal betales senest 60 dage før rejsens begyndelse."
+    },
+    {
+     "kind": "p",
+     "text": "Bookes rejsen mindre end 60 dage før afrejse, betales hele prisen ved booking."
+    },
+    {
+     "kind": "p",
+     "text": "Bookingen bliver bindende, når REFUGE61 har modtaget den krævede betaling, og gæsten har modtaget en bookingbekræftelse."
+    },
+    {
+     "kind": "p",
+     "text": "Ved booking accepterer gæsten disse handels- og rejsebetingelser."
+    }
+   ]
+  },
+  {
+   "heading": "7. Gæstens afbestilling",
+   "blocks": [
+    {
+     "kind": "p",
+     "text": "Gæsten kan til enhver tid afbestille rejsen inden afrejse."
+    },
+    {
+     "kind": "p",
+     "text": "Følgende standardiserede afbestillingsgebyrer gælder:"
+    },
+    {
+     "kind": "address",
+     "lines": [
+      "Mere end 90 dage før afrejse",
+      "Intet afbestillingsgebyr. Alle indbetalte beløb tilbagebetales."
+     ]
+    },
+    {
+     "kind": "address",
+     "lines": [
+      "90 til 61 dage før afrejse",
+      "Afbestillingsgebyr: 25 % af den samlede pris."
+     ]
+    },
+    {
+     "kind": "address",
+     "lines": [
+      "60 til 15 dage før afrejse",
+      "Afbestillingsgebyr: 50 % af den samlede pris."
+     ]
+    },
+    {
+     "kind": "address",
+     "lines": [
+      "14 dage eller mindre før afrejse",
+      "Afbestillingsgebyr: 100 % af den samlede pris."
+     ]
+    },
+    {
+     "kind": "p",
+     "text": "Hvis gæsten har indbetalt mere end det gældende afbestillingsgebyr, tilbagebetaler REFUGE61 forskellen."
+    },
+    {
+     "kind": "p",
+     "text": "Eventuel tilbagebetaling sker uden unødig forsinkelse og senest 14 dage efter afbestillingen."
+    },
+    {
+     "kind": "p",
+     "text": "Afbestilling skal meddeles REFUGE61 skriftligt."
+    },
+    {
+     "kind": "p",
+     "text": "De standardiserede afbestillingsgebyrer er underlagt den ufravigelige pakkerejselovgivning. Hvis ufravigelig lovgivning giver gæsten ret til en større tilbagebetaling, går lovgivningens regler foran disse betingelser."
+    }
+   ]
+  },
+  {
+   "heading": "8. Sygdom og personlige forhold",
+   "blocks": [
+    {
+     "kind": "p",
+     "text": "Sygdom, skade, ændrede arbejdsforhold eller andre personlige omstændigheder hos gæsten ændrer ikke i sig selv de almindelige afbestillingsbetingelser."
+    },
+    {
+     "kind": "p",
+     "text": "REFUGE61 anbefaler derfor kraftigt en passende afbestillingsforsikring."
+    }
+   ]
+  },
+  {
+   "heading": "9. Overdragelse af rejsen",
+   "blocks": [
+    {
+     "kind": "p",
+     "text": "Hvis en gæst bliver forhindret i at deltage, kan rejsen efter reglerne i den danske pakkerejselov overdrages til en anden person, som opfylder betingelserne for deltagelse."
+    },
+    {
+     "kind": "p",
+     "text": "REFUGE61 skal informeres om overdragelsen på et varigt medium så tidligt som muligt inden afrejse."
+    },
+    {
+     "kind": "p",
+     "text": "En meddelelse, som modtages senest syv dage før rejsens begyndelse, anses efter den danske pakkerejselov for at være givet inden for rimelig tid."
+    },
+    {
+     "kind": "p",
+     "text": "REFUGE61 kan kræve betaling af de faktiske, dokumenterede og rimelige omkostninger, som direkte følger af overdragelsen."
+    },
+    {
+     "kind": "p",
+     "text": "Den oprindelige gæst og den person, som overtager rejsen, hæfter for eventuelle resterende betalinger og omkostninger i forbindelse med overdragelsen i det omfang, det følger af lovgivningen."
+    }
+   ]
+  },
+  {
+   "heading": "10. Forsikring",
+   "blocks": [
+    {
+     "kind": "p",
+     "text": "Det er en betingelse for deltagelse i REFUGE61, at gæsten har relevante og tilstrækkelige forsikringer under hele rejsen og opholdet."
+    },
+    {
+     "kind": "p",
+     "text": "Forsikringen skal som minimum dække:"
+    },
+    {
+     "kind": "p",
+     "text": "• sygdom"
+    },
+    {
+     "kind": "p",
+     "text": "• ulykke"
+    },
+    {
+     "kind": "p",
+     "text": "• nødvendig lægebehandling og hjemtransport"
+    },
+    {
+     "kind": "p",
+     "text": "• de vinter-, ski- og outdooraktiviteter, som gæsten ønsker at deltage i."
+    },
+    {
+     "kind": "p",
+     "text": "Gæsten er selv ansvarlig for at sikre, at forsikringen dækker de aktiviteter, der indgår i opholdet, herunder langrend og miniekspedition med overnatning i vinterfjeldet."
+    },
+    {
+     "kind": "p",
+     "text": "Som en del af bookingprocessen vil gæsten blive bedt om at bekræfte, at vedkommende forstår og accepterer dette forsikringskrav, og at tilstrækkelig forsikringsdækning vil være på plads inden afrejse."
+    },
+    {
+     "kind": "p",
+     "text": "REFUGE61 anbefaler, at gæstens forsikring også omfatter afbestillingsdækning."
+    },
+    {
+     "kind": "p",
+     "text": "REFUGE61 har relevante erhvervs- og ansvarsforsikringer for virksomhedens egne aktiviteter."
+    }
+   ]
+  },
+  {
+   "heading": "11. Langrend og aktiviteter",
+   "blocks": [
+    {
+     "kind": "p",
+     "text": "REFUGE61 tilbyder ikke formel undervisning i langrend."
+    },
+    {
+     "kind": "p",
+     "text": "Værterne deler erfaringer og praktiske tips, rådgiver om ruter og forhold og tager med på udvalgte ture."
+    },
+    {
+     "kind": "p",
+     "text": "Gæsterne bestemmer selv, hvilke aktiviteter og ture de ønsker at deltage i. Der er ingen forventning om, at alle følger det samme program eller tempo."
+    },
+    {
+     "kind": "p",
+     "text": "Tidligere erfaring med langrend er ikke nødvendig, men gæsterne bør være i normal fysisk form og er selv ansvarlige for at vurdere, om en valgt aktivitet passer til deres egne fysiske og tekniske forudsætninger."
+    }
+   ]
+  },
+  {
+   "heading": "12. Ture på egen hånd og sikkerhed",
+   "blocks": [
+    {
+     "kind": "p",
+     "text": "Gæsterne kan som udgangspunkt selv tilrettelægge deres dage og tage på skiture uden værterne."
+    },
+    {
+     "kind": "p",
+     "text": "Af sikkerhedsmæssige årsager opfordres gæster, der tager afsted på egen hånd, kraftigt til at informere værterne eller en anden person på hytten om deres planlagte rute og forventede hjemkomst."
+    },
+    {
+     "kind": "p",
+     "text": "Den enkelte gæst er ansvarlig for at vælge en tur, der passer til egne færdigheder og forholdene på dagen."
+    },
+    {
+     "kind": "p",
+     "text": "REFUGE61 kan anbefale eller fraråde bestemte ruter eller aktiviteter på baggrund af vejr, sneforhold, sikkerhed eller andre relevante omstændigheder."
+    },
+    {
+     "kind": "p",
+     "text": "Langrend og færdsel i vinterfjeldet indebærer naturlige risici. Disse naturlige risici udgør ikke i sig selv en mangel ved pakkerejsen."
+    },
+    {
+     "kind": "p",
+     "text": "REFUGE61 er fortsat ansvarlig for leveringen af de aftalte rejseydelser og for personskade eller tab i det omfang, dette følger af gældende lovgivning."
+    },
+    {
+     "kind": "p",
+     "text": "Intet i disse betingelser udelukker eller begrænser et ansvar eller en rettighed, som efter gældende lovgivning ikke kan udelukkes eller begrænses til skade for gæsten."
+    }
+   ]
+  },
+  {
+   "heading": "13. Miniekspeditionen",
+   "blocks": [
+    {
+     "kind": "p",
+     "text": "I løbet af ugen tilbydes gæsterne en miniekspedition med én overnatning i vinterfjeldet."
+    },
+    {
+     "kind": "p",
+     "text": "Deltagelse er frivillig."
+    },
+    {
+     "kind": "p",
+     "text": "Miniekspeditionen gennemføres sammen med værterne og faciliteres af REFUGE61. Relevant fælles ekspeditionsudstyr stilles til rådighed."
+    },
+    {
+     "kind": "p",
+     "text": "Rute, tidspunkt, overnatningssted og den endelige gennemførelse afhænger af de aktuelle vejr-, temperatur-, sne- og sikkerhedsforhold."
+    },
+    {
+     "kind": "p",
+     "text": "Værterne kan derfor ændre rute, tidspunkt eller aktivitet eller, hvor det er nødvendigt, beslutte, at miniekspeditionen ikke kan gennemføres som oprindeligt planlagt."
+    }
+   ]
+  },
+  {
+   "heading": "14. Vejr og ændringer i programmet",
+   "blocks": [
+    {
+     "kind": "p",
+     "text": "REFUGE61 foregår i vinterfjeldet, hvor skiftende vejr- og sneforhold er en del af oplevelsen."
+    },
+    {
+     "kind": "p",
+     "text": "Bestemte ruter, sneforhold eller aktiviteter på bestemte dage kan derfor ikke garanteres."
+    },
+    {
+     "kind": "p",
+     "text": "Mindre ændringer af ruter, aktiviteter og det praktiske program kan foretages, når forholdene kræver det, særligt af hensyn til vejr, sneforhold eller sikkerhed."
+    },
+    {
+     "kind": "p",
+     "text": "Hvis en ændring udgør en væsentlig ændring af en aftalt rejseydelse eller en mangel ved pakkerejsen, gælder den rejsendes rettigheder efter den gældende pakkerejselovgivning."
+    }
+   ]
+  },
+  {
+   "heading": "15. Alder og adfærd",
+   "blocks": [
+    {
+     "kind": "p",
+     "text": "Gæster skal normalt være fyldt 18 år for at deltage alene."
+    },
+    {
+     "kind": "p",
+     "text": "Unge på 16 år eller derover kan deltage sammen med en ansvarlig voksen."
+    },
+    {
+     "kind": "p",
+     "text": "REFUGE61 bygger på fællesskab, frihed, tillid og gensidig respekt. Gæster forventes at opføre sig ansvarligt og hensynsfuldt over for andre gæster, værterne, hytten og naturen."
+    },
+    {
+     "kind": "p",
+     "text": "Hytten og området omkring den er røgfrit."
+    },
+    {
+     "kind": "p",
+     "text": "Alkohol kan nydes med måde og under behørigt hensyn til fællesskabet, sikkerheden og de planlagte aktiviteter."
+    }
+   ]
+  },
+  {
+   "heading": "16. Udstyr",
+   "blocks": [
+    {
+     "kind": "p",
+     "text": "Det inkluderede ski- og ekspeditionsudstyr stilles til rådighed for gæsterne under opholdet."
+    },
+    {
+     "kind": "p",
+     "text": "Gæsterne forventes at behandle udstyret ansvarligt og følge rimelige anvisninger om brugen."
+    },
+    {
+     "kind": "p",
+     "text": "Almindeligt slid og hændelige skader medfører ikke i sig selv et erstatningskrav mod gæsten."
+    },
+    {
+     "kind": "p",
+     "text": "Ved forsætlig skade eller skade forårsaget af groft uforsvarlig behandling kan gæsten blive ansvarlig for det dokumenterede tab i overensstemmelse med gældende lovgivning."
+    }
+   ]
+  },
+  {
+   "heading": "17. Aflysning fra REFUGE61",
+   "blocks": [
+    {
+     "kind": "p",
+     "text": "REFUGE61 gennemfører rejsen uanset antallet af bookede gæster. Der gælder ikke noget minimumsdeltagerantal."
+    },
+    {
+     "kind": "p",
+     "text": "Hvis REFUGE61 aflyser hele rejsen, tilbagebetales alle beløb, som gæsten har indbetalt til REFUGE61, uden unødig forsinkelse og senest 14 dage efter aflysningen."
+    },
+    {
+     "kind": "p",
+     "text": "Gæstens øvrige rettigheder følger af gældende pakkerejselovgivning."
+    },
+    {
+     "kind": "p",
+     "text": "Sygdom eller fravær hos én af værterne medfører ikke i sig selv aflysning, hvis opholdet fortsat kan gennemføres sikkert og forsvarligt med den anden vært."
+    }
+   ]
+  },
+  {
+   "heading": "18. Uundgåelige og ekstraordinære omstændigheder",
+   "blocks": [
+    {
+     "kind": "p",
+     "text": "Ved uundgåelige og ekstraordinære omstændigheder gælder reglerne i den danske pakkerejselov."
+    },
+    {
+     "kind": "p",
+     "text": "Hvis sådanne omstændigheder på destinationen eller i umiddelbar nærhed heraf væsentligt påvirker gennemførelsen af pakkerejsen eller transporten af passagerer til destinationen, har gæsten de rettigheder til afbestilling, tilbagebetaling og øvrige retsmidler, som følger af gældende lovgivning."
+    }
+   ]
+  },
+  {
+   "heading": "19. Rejsegarantifonden, rejsedokumenter og problemer under opholdet",
+   "blocks": [
+    {
+     "kind": "p",
+     "text": "Inden REFUGE61 sælger og gennemfører rejser, hvor registrering er påkrævet, vil REFUGE61 være registreret i Rejsegarantifonden."
+    },
+    {
+     "kind": "p",
+     "text": "Når registreringen er gennemført, indsættes de relevante registreringsoplysninger her."
+    },
+    {
+     "kind": "p",
+     "text": "Gæsterne er selv ansvarlige for at have gyldigt pas og øvrige nødvendige rejsedokumenter."
+    },
+    {
+     "kind": "p",
+     "text": "Inden aftalen indgås, giver REFUGE61 de oplysninger om pas-, visum- og sundhedsforhold, som arrangøren efter lovgivningen er forpligtet til at give."
+    },
+    {
+     "kind": "p",
+     "text": "Hvis der opstår et problem under opholdet, skal gæsten kontakte REFUGE61 eller værterne så hurtigt som med rimelighed muligt, så REFUGE61 får mulighed for at undersøge og, hvor det er muligt, afhjælpe problemet."
+    },
+    {
+     "kind": "p",
+     "text": "Gæstens lovbestemte rettigheder berøres ikke."
+    }
+   ]
+  },
+  {
+   "heading": "20. Lovgrundlag og kontakt",
+   "blocks": [
+    {
+     "kind": "p",
+     "text": "Rejsen arrangeres af en dansk virksomhed og er underlagt dansk ret."
+    },
+    {
+     "kind": "p",
+     "text": "Hvor rejsen er omfattet af den danske lov om pakkerejser og sammensatte rejsearrangementer, gælder lovens ufravigelige regler uanset formuleringerne i disse betingelser."
+    },
+    {
+     "kind": "p",
+     "text": "Valget af dansk ret begrænser ikke den beskyttelse, som en forbruger måtte have efter ufravigelige regler, der finder anvendelse på aftalen."
+    },
+    {
+     "kind": "address",
+     "lines": [
+      "REFUGE61°",
+      "[Juridisk selskabsnavn]",
+      "CVR: [indsættes]",
+      "Adresse: Porskærvej 28, 8420 Knebel, Danmark",
+      "E-mail: [indsættes]",
+      "Telefon: +45 20 87 03 42"
+     ]
+    },
+    {
+     "kind": "p",
+     "text": "Version: 17. august 2026"
+    }
+   ]
+  }
  ]
 }

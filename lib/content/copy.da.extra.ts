@@ -29,7 +29,8 @@ export const DA_EXTRA: Readonly<Record<string, string>> = {
   Move: "Bevægelse",
   Gather: "Samvær",
   Reset: "Ro",
-  "Go further": "Gå videre",
+  // Bjørn rewrote this one in his PDF: "Gå videre" -> "Ud på ski".
+  "Go further": "Ud på ski",
   "Who Is Refuge61 For?": "Hvem er REFUGE61 for?",
   "Phone / WhatsApp": "Telefon / WhatsApp",
   "how active would you like your stay to be?":
