@@ -1,60 +1,74 @@
 # -*- coding: utf-8 -*-
 """
-Generate lib/content/copy.da.ts from Bjørn's PDF rather than the .xlsx.
+Generate lib/content/copy.da.ts from Bjørn's macro-enabled workbook.
 
-The Danish first went live from the spreadsheet's DA column. Bjørn then sent a
-PDF of his own workbook in which 51 of the 229 strings are rewritten -- not
-corrections of mistakes, but a native speaker replacing serviceable Danish
-with idiomatic Danish ("Det er Norsk hygge", "ud over vidderne"). His version
-wins, so this reads the PDF.
+History of this file's source, because it has moved twice:
 
-Run _scripts/i18n/parse_da_pdf.py first; it writes _da_pdf.json.
+  1. The .xlsx Mathieu sent -- a serviceable machine draft.
+  2. A PDF print of Bjørn's own workbook, which rewrote 51 strings into
+     idiomatic Danish. Parsed out of the PDF because that was all we had.
+  3. This .xlsm, the workbook that PDF was printed from, now with further
+     edits. Reading the spreadsheet directly removes the PDF-parsing step and
+     everything that could go wrong in it.
 
-Every row is checked against the English in the spreadsheet before it is used:
-if the PDF's English for a T-id does not match, the tables are misaligned and
-the run aborts rather than publishing Danish against the wrong sentence.
+Two traps in this workbook:
+
+  * Its Let's Talk sheet is named "LETS TALK", without the apostrophe the
+    .xlsx uses. Matching on one spelling silently drops 97 strings, so both
+    spellings are accepted.
+  * It is macro-enabled, so it needs keep_vba=True.
+
+Every row's English is checked against the published English before its Danish
+is used; a mismatch means the row is not the row we think it is, and the run
+aborts rather than attach Danish to the wrong sentence.
 """
 import io
-import json
 import os
 import re
 
 import openpyxl
 
-PDF_JSON = "_scripts/i18n/_da_pdf.json"
-OUT = "lib/content/copy.da.ts"
 SRC = os.path.join(
     r"C:\Users\Abbas\OneDrive\Desktop\noman",
-    "REFUGE61_Website_V2_EN_FR_DA_FR_corrige.xlsx",
+    "REFUGE61_Website_V3_FR_corrige_CHANGES_MAJ.xlsm",
 )
+OUT = "lib/content/copy.da.ts"
+REFERENCE = "lib/content/copy.fr.ts"  # for its `en` field and page names
+
+# Sheet name -> the page slug used in the generated file. Both spellings of
+# the Let's Talk sheet are listed; the workbooks disagree.
 SHEET_PAGE = {
     "HOME": "home",
     "THE LODGE": "lodge",
     "PRACTICAL INFO": "practical",
     "LET'S TALK": "letsTalk",
+    "LETS TALK": "letsTalk",
     "NAVIGATION": "nav",
 }
+
+ENTRY = re.compile(
+    r'(T\d{3}): \{\s*page: "([^"]*)",\s*type: "((?:[^"\\]|\\.)*)",'
+    r'\s*en: "((?:[^"\\]|\\.)*)",\s*tr: "((?:[^"\\]|\\.)*)"',
+    re.S,
+)
 
 
 def norm(s):
     return re.sub(r"\s+", " ", (s or "")).strip()
 
 
-def spreadsheet():
-    wb = openpyxl.load_workbook(SRC)
-    out = {}
-    for name, page in SHEET_PAGE.items():
-        if name not in wb.sheetnames:
-            continue
-        for r in wb[name].iter_rows(min_row=4, values_only=True):
-            if not r or not r[0]:
-                continue
-            out[str(r[0]).strip()] = {
-                "page": page,
-                "type": norm(r[1]),
-                "en": norm(r[2]),
-            }
-    return out
+def unescape(s):
+    return s.replace('\\"', '"').replace("\\n", "\n").replace("\\\\", "\\")
+
+
+def reference():
+    """{T-id: (page, type, english)} from the French module, which mirrors
+    the JSX and is regenerated from the same spreadsheet family."""
+    src = io.open(REFERENCE, encoding="utf-8").read()
+    return {
+        m.group(1): (m.group(2), unescape(m.group(3)), unescape(m.group(4)))
+        for m in ENTRY.finditer(src)
+    }
 
 
 def esc(t):
@@ -62,41 +76,54 @@ def esc(t):
 
 
 def main():
-    pdf = json.load(io.open(PDF_JSON, encoding="utf-8"))
-    sheet = spreadsheet()
+    wb = openpyxl.load_workbook(SRC, keep_vba=True, data_only=True)
+    ref = reference()
 
-    rows, mismatched = [], []
-    for tid, meta in sheet.items():
-        entry = pdf.get(tid)
-        if not entry or not entry["da"]:
+    rows, mismatched, unknown = [], [], []
+    for name in wb.sheetnames:
+        page = SHEET_PAGE.get(name.upper())
+        if not page:
             continue
-        # The PDF is a print of the same table; if its English disagrees, the
-        # row is not the row we think it is.
-        if norm(entry["en"]) != meta["en"]:
-            mismatched.append(tid)
-            continue
-        rows.append((tid, meta, norm(entry["da"])))
+        for r in wb[name].iter_rows(min_row=4, values_only=True):
+            if not r or not r[0]:
+                continue
+            tid = str(r[0]).strip()
+            if not re.fullmatch(r"T\d{3}", tid):
+                continue
+            da = norm(r[4]) if len(r) > 4 else ""
+            if not da:
+                continue
+            if tid not in ref:
+                unknown.append(tid)
+                continue
+            ref_page, ref_type, ref_en = ref[tid]
+            if norm(r[2]) != norm(ref_en):
+                mismatched.append(tid)
+                continue
+            rows.append((tid, ref_page, ref_type, ref_en, da))
 
     if mismatched:
         print("ABORTING -- English mismatch on %d row(s): %s"
               % (len(mismatched), ", ".join(mismatched[:12])))
         raise SystemExit(1)
+    if unknown:
+        print("note: %d Danish row(s) have no published English and were "
+              "skipped: %s" % (len(unknown), ", ".join(unknown[:12])))
 
     out = io.StringIO()
     out.write('''// Danish copy.
 //
-// Generated by _scripts/i18n/gen_copy_da.py from the PDF Bjørn sent on
-// 2026-08-29 (parsed by parse_da_pdf.py), not from the .xlsx the French comes
-// from: his PDF rewrites 51 of these strings into idiomatic Danish, and his
-// version is the one to publish.
+// Generated by _scripts/i18n/gen_copy_da.py from the .xlsm Bjørn maintains.
+// His Danish is a rewrite, not a translation of the machine draft that first
+// went live -- he replaced serviceable Danish with idiomatic Danish.
 //
-// Every row was checked against the spreadsheet's English before being
-// written, so a Danish string cannot end up attached to the wrong sentence.
+// Every row was checked against the published English before being written,
+// so a Danish string cannot end up attached to the wrong sentence.
 //
 // Terms & Conditions are absent here: that page has its own module,
 // lib/content/terms.ts.
 //
-// DO NOT EDIT BY HAND -- regenerate from the source documents instead.
+// DO NOT EDIT BY HAND -- regenerate from the spreadsheet instead.
 
 export type CopyEntry = {
   readonly page: string;
@@ -107,11 +134,9 @@ export type CopyEntry = {
 
 export const COPY_DA: Readonly<Record<string, CopyEntry>> = {
 ''')
-    for tid, meta, da in rows:
-        out.write(
-            '  %s: {\n    page: "%s",\n    type: "%s",\n    en: "%s",\n    tr: "%s",\n  },\n'
-            % (tid, meta["page"], esc(meta["type"]), esc(meta["en"]), esc(da))
-        )
+    for tid, page, typ, en, da in rows:
+        out.write('  %s: {\n    page: "%s",\n    type: "%s",\n    en: "%s",\n    tr: "%s",\n  },\n'
+                  % (tid, page, esc(typ), esc(en), esc(da)))
     out.write('''};
 
 /** Look up the approved Danish for an exact English string. */

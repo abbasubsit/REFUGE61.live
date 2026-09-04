@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 import { HomePage } from "@/components/pages/HomePage";
 
 export const metadata: Metadata = {
-  title: "REFUGE61 — Et tilflugtssted over trægrænsen",
+  title: "REFUGE61 — Et helt særligt sted i Peer Gynts rige, Norge",
 };
 
 export default function HomeDa() {
