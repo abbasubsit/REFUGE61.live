@@ -6,7 +6,8 @@
 // the translation spreadsheet and never passed through t().
 //
 // Sources: "The Story of Bjørkåsen EN.docx" and "Histoire du chalet FR.docx".
-// Used verbatim.
+// The Danish came from Bjørn by email on 2026-09-04, the last Danish text the
+// site was missing. All three used verbatim.
 
 import type { Locale } from "@/lib/i18n";
 
@@ -46,6 +47,26 @@ const FR: HistoryContent = {
     "Plus d’un siècle après sa construction, l’esprit du lieu est toujours là : un chalet isolé dans les montagnes, fait pour vivre dehors, se retrouver autour de la table et profiter simplement du temps qui passe.",
 };
 
+const DA: HistoryContent = {
+  eyebrow: "Siden 1900",
+  title: "Historien om Bjørkåsen",
+  lead: "Bjørkåsen har mere end hundrede års historie.",
+  paragraphs: [
+    "I begyndelsen af 1900-tallet forelskede industrimanden Georg von Krogh sig i disse fjelde, hvor han kom for at jage og fiske. Her byggede han en elegant jagthytte i schweizerstil – afsides nok til at være helt tæt på naturen, men samtidig forbundet med verden udenfor. For fortsat at kunne drive sine forretninger mellem USA og Europa fik han endda ført en telefonlinje hele vejen fra landsbyen og op til hytten.",
+    "Von Krogh tilbragte en stor del af året på Bjørkåsen, omgivet af en mindre husholdning, og havde ofte besøg af industrifolk og gæster fra udlandet. Lokalt vildt blev serveret til middag, og hovedbygningen blev snart kendt som “Slottet”.",
+    "Efter hans død i slutningen af 1940’erne skiftede Bjørkåsen ejer. Fra 1959 blev stedet rammen om vigtige møder og sammenkomster og tog gennem årene imod højtstående personer og statsoverhoveder fra flere lande.",
+    "Siden 2013 har Bjørkåsen igen været privatejet.",
+  ],
+  closing:
+    "Mere end hundrede år efter, at stedet blev bygget, lever Bjørkåsens ånd stadig videre: en afsidesliggende hytte i fjeldene, skabt til dage ude i naturen, aftener omkring bordet og den enkle glæde ved at sætte tempoet ned.",
+};
+
+const BY_LOCALE: Record<Locale, HistoryContent> = {
+  en: EN,
+  fr: FR,
+  da: DA,
+};
+
 export function historyContent(locale: Locale): HistoryContent {
-  return locale === "fr" ? FR : EN;
+  return BY_LOCALE[locale];
 }
