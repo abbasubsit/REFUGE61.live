@@ -90,4 +90,15 @@ export const DA_EXTRA: Readonly<Record<string, string>> = {
     "Din besked kunne ikke sendes. Prøv igen, eller skriv til os direkte.",
   "Your message could not be sent. Please check your connection and try again.":
     "Din besked kunne ikke sendes. Tjek din forbindelse, og prøv igen.",
+  // --- Price lines, added 2026-09-05 -------------------------------------
+  // AWAITING DANISH. Bjørn was working when the client sent these and will
+  // send the Danish separately. Until then t() falls back to the English, so
+  // the Danish pages show the price in English rather than not at all.
+  //
+  // Add the five keys here when his wording arrives:
+  //   "A different kind of week. €1,800 per person."
+  //   "And it all starts with a conversation."
+  //   "€1,800 per person — one week in the heart of the Norwegian winter."
+  //   "€1,800 per person"
+  //   "A week at the lodge, with meals, skis and activities included."
 };

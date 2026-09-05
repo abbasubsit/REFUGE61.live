@@ -354,9 +354,22 @@ export function LodgePage({ locale }: { locale: Locale }) {
                       </div>
                     ))}
                   </div>
+
+                  {/* Price, added 2026-09-05 where the client marked it: the
+                      foot of this column, after the room and kitchen details
+                      it is the answer to. Ruled off so it reads as a summary
+                      of the list rather than another item in it. */}
+                  <div className="border-t border-charcoal/15 pt-space-6">
+                    <p className="font-display text-heading-s text-forest">
+                      {t(locale, "€1,800 per person")}
+                    </p>
+                    <p className="mt-space-2 text-body-m text-charcoal/75">
+                      {t(locale, "A week at the lodge, with meals, skis and activities included.")}
+                    </p>
+                  </div>
                 </div>
               </div>
-              
+
               {/* Right Column: The Green Card */}
               <div className="w-full md:w-1/2 flex md:justify-end mt-space-6 md:mt-0">
                 <div className="bg-forest p-space-8 md:p-space-12 w-full max-w-[50ch]">

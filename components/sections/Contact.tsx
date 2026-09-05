@@ -31,11 +31,23 @@ export function Contact({ locale = "en" }: { locale?: Locale } = {}) {
           id="contact-heading"
           className="font-display text-display-m text-charcoal md:text-display-l"
         >{t(locale, "Your week begins here.")}</h2>
+
+        {/* Price, added 2026-09-05: "we want to show our price a little more".
+            Sits where the client marked it, between the headline and the
+            reply line. The figure carries the display face so it reads as
+            part of the statement rather than as small print. */}
+        <p className="mt-space-6 font-display text-heading-s text-forest">
+          {t(locale, "A different kind of week. €1,800 per person.")}
+        </p>
+        <p className="mt-space-2 max-w-[38ch] text-body-l text-charcoal/80">
+          {t(locale, "And it all starts with a conversation.")}
+        </p>
+
         <p className="mt-space-4 max-w-[38ch] text-body-l text-charcoal/80">
           {t(locale, "Write to us, and we'll reply personally.")}
         </p>
         <Button href="mailto:hello@refuge61.com" variant="primary" className="mt-space-8">
-          Start a conversation
+          {t(locale, "START A CONVERSATION")}
         </Button>
       </RevealOnScroll>
     </section>

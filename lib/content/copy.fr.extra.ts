@@ -89,4 +89,21 @@ export const FR_EXTRA: Readonly<Record<string, string>> = {
     "Votre message n'a pas pu être envoyé. Réessayez ou écrivez-nous directement.",
   "Your message could not be sent. Please check your connection and try again.":
     "Votre message n'a pas pu être envoyé. Vérifiez votre connexion et réessayez.",
+  // --- Price lines, added 2026-09-05 -------------------------------------
+  // "We want to show our price a little more." Three placements the client
+  // marked on screenshots: the homepage contact block, The Weeks on Practical
+  // Information, and the foot of "Everything we need" on The Lodge. French is
+  // his own wording. No T-id -- these postdate the translation spreadsheet.
+  //
+  // French typography: a narrow no-break space inside the figure and before
+  // the euro sign, so "1 800 €" can never break across two lines.
+  "A different kind of week. €1,800 per person.":
+    "Une semaine différente. 1 800 € par personne.",
+  "And it all starts with a conversation.":
+    "Et tout commence par une conversation.",
+  "€1,800 per person — one week in the heart of the Norwegian winter.":
+    "1 800 € par personne — une semaine au cœur de l’hiver norvégien.",
+  "€1,800 per person": "1 800 € par personne",
+  "A week at the lodge, with meals, skis and activities included.":
+    "Une semaine au lodge, repas, skis et activités compris.",
 };

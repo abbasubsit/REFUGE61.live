@@ -135,6 +135,12 @@ export function PracticalPage({ locale }: { locale: Locale }) {
             imageSrc="/images/practical/four-weeks.jpg"
             imageAlt="Winter landscape at REFUGE61"
           >
+            {/* Price, added 2026-09-05 where the client marked it: under the
+                headline, before the dates. */}
+            <p className="font-display text-heading-s text-forest">
+              {t(locale, "€1,800 per person — one week in the heart of the Norwegian winter.")}
+            </p>
+
             <p>{t(locale, "REFUGE61 will welcome guests for four weeks in winter 2027, from Saturday to Saturday:")}</p>
 
             <ul className="list-disc pl-space-4 space-y-space-2 mt-space-2 mb-space-4">
