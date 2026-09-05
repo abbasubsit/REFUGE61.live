@@ -90,15 +90,22 @@ export const DA_EXTRA: Readonly<Record<string, string>> = {
     "Din besked kunne ikke sendes. Prøv igen, eller skriv til os direkte.",
   "Your message could not be sent. Please check your connection and try again.":
     "Din besked kunne ikke sendes. Tjek din forbindelse, og prøv igen.",
-  // --- Price lines, added 2026-09-05 -------------------------------------
-  // AWAITING DANISH. Bjørn was working when the client sent these and will
-  // send the Danish separately. Until then t() falls back to the English, so
-  // the Danish pages show the price in English rather than not at all.
-  //
-  // Add the five keys here when his wording arrives:
-  //   "A different kind of week. €1,800 per person."
-  //   "And it all starts with a conversation."
-  //   "€1,800 per person — one week in the heart of the Norwegian winter."
-  //   "€1,800 per person"
-  //   "A week at the lodge, with meals, skis and activities included."
+  // --- The Weeks headline, reworded 2026-09-05 ---------------------------
+  "Four weeks. Maximum 14 guests.": "Fire uger. Maks. 14 gæster.",
+
+  // --- Price lines: Bjørn's Danish, sent 2026-09-05 ----------------------
+  // Danish writes the thousands separator as a full stop, so "€1.800" is
+  // correct here and is his own wording.
+  "A different kind of week. €1,800 per person.":
+    "En anderledes uge. €1.800 pr. person.",
+  "And it all starts with a conversation.":
+    "Og det hele begynder med en samtale.",
+  "€1,800 per person — one week in the heart of the Norwegian winter.":
+    "€1.800 pr. person — én uge i det norske vinterlandskab.",
+  "€1,800 per person": "€1.800 pr. person",
+  // "logden" is his spelling. The rest of the site's Danish uses "lodgen"
+  // (see T024, T223), so this may be a slip -- flagged with the client rather
+  // than corrected here, because it is his copy to change.
+  "A week at the lodge, with meals, skis and activities included.":
+    "En uge på logden med måltider, ski og aktiviteter inkluderet.",
 };

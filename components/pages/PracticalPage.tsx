@@ -131,7 +131,7 @@ export function PracticalPage({ locale }: { locale: Locale }) {
           {/* THE WEEKS */}
           <InfoBlock
             eyebrow={t(locale, "The Weeks")}
-            headline={t(locale, "Four weeks. A small number of guests (maximum of 14)")}
+            headline={t(locale, "Four weeks. Maximum 14 guests.")}
             imageSrc="/images/practical/four-weeks.jpg"
             imageAlt="Winter landscape at REFUGE61"
           >

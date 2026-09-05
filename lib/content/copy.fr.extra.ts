@@ -106,4 +106,11 @@ export const FR_EXTRA: Readonly<Record<string, string>> = {
   "€1,800 per person": "1 800 € par personne",
   "A week at the lodge, with meals, skis and activities included.":
     "Une semaine au lodge, repas, skis et activités compris.",
+  // --- The Weeks headline, reworded 2026-09-05 ---------------------------
+  // Mathieu's brief to Bjørn changed the English to match the French and
+  // Danish, which had already moved on: "Four weeks. A small number of guests
+  // (maximum of 14)" became "Four weeks. Maximum 14 guests." Translation is
+  // keyed on the English, so the new wording needs its own entry -- T059 in
+  // the spreadsheet still holds the old English.
+  "Four weeks. Maximum 14 guests.": "Quatre semaines. 14 personnes maximum.",
 };
