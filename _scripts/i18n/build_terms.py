@@ -123,21 +123,27 @@ def parse_da():
 # has the real values while its closing block still has placeholders -- and
 # that is corrected too.
 #
-# The email address was NOT supplied and stays a placeholder in all three.
 COMPANY_NAME = "Refuge61 ApS"
 CVR = "46711939"
+# The mailbox was created at one.com on 2026-09-05. It is the shared address
+# rather than either host's personal one, so the page does not have to change
+# if one of them steps back from the day-to-day.
+EMAIL = "hello@refuge61.com"
 
 ADDRESS_FIXUPS = {
     # English
     "[Legal company name to be inserted once incorporated]": COMPANY_NAME,
     "CVR no.: [to be inserted]": "CVR no.: " + CVR,
+    "Email: [to be inserted]": "Email: " + EMAIL,
     # French
     "[Raison sociale à compléter après la création de la société]": COMPANY_NAME,
     "N° CVR : [à compléter]": "N° CVR : " + CVR,
+    "E-mail : [à compléter]": "E-mail : " + EMAIL,
     # Danish -- "name: " is a stray label from his template
     "name: Refuge61 Aps": COMPANY_NAME,
     "[Juridisk selskabsnavn]": COMPANY_NAME,
     "CVR: [indsættes]": "CVR: " + CVR,
+    "E-mail: [indsættes]": "E-mail: " + EMAIL,
 }
 
 
@@ -184,8 +190,9 @@ HEADER = '''// Terms & Conditions, in English, French and Danish.
 // inconsistent -- its opening block has the real values while its closing
 // block still reads "[Juridisk selskabsnavn]" -- and that is corrected too.
 //
-// The EMAIL ADDRESS was not supplied and is still a placeholder in all three
-// languages. It is the last thing missing from this page.
+// The email address followed on 2026-09-05, once the hello@refuge61.com
+// mailbox existed at one.com. This page now carries no placeholders in any
+// language.
 //
 // DO NOT EDIT BY HAND -- change the source documents and regenerate.
 

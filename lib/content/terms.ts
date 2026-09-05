@@ -12,8 +12,9 @@
 // inconsistent -- its opening block has the real values while its closing
 // block still reads "[Juridisk selskabsnavn]" -- and that is corrected too.
 //
-// The EMAIL ADDRESS was not supplied and is still a placeholder in all three
-// languages. It is the last thing missing from this page.
+// The email address followed on 2026-09-05, once the hello@refuge61.com
+// mailbox existed at one.com. This page now carries no placeholders in any
+// language.
 //
 // DO NOT EDIT BY HAND -- change the source documents and regenerate.
 
@@ -45,7 +46,7 @@ const EN: TermsContent = {
         { kind: "p", text: "REFUGE61 is neither a traditional hotel stay nor a classic guided ski holiday with a fixed daily programme. Guests and hosts live together at the lodge, share meals, cook together and spend their days cross-country skiing and enjoying the winter landscape." },
         { kind: "p", text: "Guests are free to choose their own pace and activities. The hosts provide the framework for the week, advise on routes and possibilities, share practical tips on cross-country skiing and join selected outings.The week also includes the opportunity to take part in an optional mini-expedition, with one overnight stay in the winter mountains, subject to weather, snow and safety conditions." },
         { kind: "subheading", text: "Organiser" },
-        { kind: "address", lines: ["REFUGE61°", "Refuge61 ApS", "CVR no.: 46711939", "Address: Porskærvej 28, 8420 Knebel, Denmark", "Email: [to be inserted]", "Telephone: +45 20 87 03 42"] },
+        { kind: "address", lines: ["REFUGE61°", "Refuge61 ApS", "CVR no.: 46711939", "Address: Porskærvej 28, 8420 Knebel, Denmark", "Email: hello@refuge61.com", "Telephone: +45 20 87 03 42"] },
       ],
     },
     {
@@ -250,7 +251,7 @@ const EN: TermsContent = {
         { kind: "p", text: "The trip is organised by a Danish company and is governed by Danish law." },
         { kind: "p", text: "Where the trip is subject to the Danish Act on Package Travel and Linked Travel Arrangements, its mandatory provisions apply regardless of the wording of these terms." },
         { kind: "p", text: "The choice of Danish law does not limit any protection available to a consumer under mandatory rules applicable to the contract." },
-        { kind: "address", lines: ["REFUGE61°", "Refuge61 ApS", "CVR no.: 46711939", "Address: Porskærvej 28, 8420 Knebel, Denmark", "Email: [to be inserted]", "Telephone: +45 20 87 03 42"] },
+        { kind: "address", lines: ["REFUGE61°", "Refuge61 ApS", "CVR no.: 46711939", "Address: Porskærvej 28, 8420 Knebel, Denmark", "Email: hello@refuge61.com", "Telephone: +45 20 87 03 42"] },
         { kind: "p", text: "Version: 18 August 2026" },
       ],
     },
@@ -267,7 +268,7 @@ const FR: TermsContent = {
         { kind: "p", text: "REFUGE61 n’est ni un séjour hôtelier traditionnel, ni un séjour de ski classique avec un guide et un programme quotidien imposé. Hôtes et participants vivent ensemble au lodge, partagent les repas, cuisinent ensemble et passent leurs journées à skier/marcher et à profiter des paysages d’hiver." },
         { kind: "p", text: "Chacun est libre de choisir ses activités et son rythme. Les hôtes donnent le cadre général de la semaine, conseillent les participants sur les itinéraires et les possibilités de sorties, partagent leur expérience et quelques conseils pratiques sur le ski de fond, et participent à certaines sorties. La semaine offre également la possibilité de participer à une mini-expédition facultative, avec une nuit en montagne, si les conditions météorologiques, d’enneigement et de sécurité le permettent." },
         { kind: "subheading", text: "Organisateur" },
-        { kind: "address", lines: ["REFUGE61°", "Refuge61 ApS", "N° CVR : 46711939", "Adresse : Porskærvej 28, 8420 Knebel, Danemark", "E-mail : [à compléter]", "Téléphone : +45 20 87 03 42"] },
+        { kind: "address", lines: ["REFUGE61°", "Refuge61 ApS", "N° CVR : 46711939", "Adresse : Porskærvej 28, 8420 Knebel, Danemark", "E-mail : hello@refuge61.com", "Téléphone : +45 20 87 03 42"] },
       ],
     },
     {
@@ -472,7 +473,7 @@ const FR: TermsContent = {
         { kind: "p", text: "Le voyage est organisé par une société danoise et relève du droit danois." },
         { kind: "p", text: "Lorsque le voyage relève de la loi danoise sur les voyages à forfait et les prestations de voyage liées, ses dispositions impératives s’appliquent indépendamment du contenu des présentes conditions." },
         { kind: "p", text: "Le choix du droit danois ne limite pas les protections dont bénéficie le consommateur en vertu des dispositions impératives applicables au contrat." },
-        { kind: "address", lines: ["REFUGE61°", "Refuge61 ApS", "N° CVR : 46711939", "Adresse : Porskærvej 28, 8420 Knebel, Danemark", "E-mail : [à compléter]", "Téléphone : +45 20 87 03 42"] },
+        { kind: "address", lines: ["REFUGE61°", "Refuge61 ApS", "N° CVR : 46711939", "Adresse : Porskærvej 28, 8420 Knebel, Danemark", "E-mail : hello@refuge61.com", "Téléphone : +45 20 87 03 42"] },
         { kind: "p", text: "Version : 18 août 2026" },
       ],
     },
@@ -491,7 +492,7 @@ const DA: TermsContent = {
         { kind: "p", text: "Gæsterne kan frit vælge deres eget tempo og aktiviteter. Værterne skaber rammerne for ugen, rådgiver om ruter og muligheder, deler praktiske tips om langrend og tager med på udvalgte ture." },
         { kind: "p", text: "Ugen giver også mulighed for at deltage i en miniekspedition med én overnatning i vinterfjeldet." },
         { kind: "subheading", text: "Arrangør" },
-        { kind: "address", lines: ["REFUGE61°", "Refuge61 ApS", "CVR: 46711939", "Adresse: Porskærvej 28, 8420 Knebel, Danmark", "E-mail: [indsættes]", "Telefon: +45 20 87 03 42"] },
+        { kind: "address", lines: ["REFUGE61°", "Refuge61 ApS", "CVR: 46711939", "Adresse: Porskærvej 28, 8420 Knebel, Danmark", "E-mail: hello@refuge61.com", "Telefon: +45 20 87 03 42"] },
       ],
     },
     {
@@ -696,7 +697,7 @@ const DA: TermsContent = {
         { kind: "p", text: "Rejsen arrangeres af en dansk virksomhed og er underlagt dansk ret." },
         { kind: "p", text: "Hvor rejsen er omfattet af den danske lov om pakkerejser og sammensatte rejsearrangementer, gælder lovens ufravigelige regler uanset formuleringerne i disse betingelser." },
         { kind: "p", text: "Valget af dansk ret begrænser ikke den beskyttelse, som en forbruger måtte have efter ufravigelige regler, der finder anvendelse på aftalen." },
-        { kind: "address", lines: ["REFUGE61°", "Refuge61 ApS", "CVR: 46711939", "Adresse: Porskærvej 28, 8420 Knebel, Danmark", "E-mail: [indsættes]", "Telefon: +45 20 87 03 42"] },
+        { kind: "address", lines: ["REFUGE61°", "Refuge61 ApS", "CVR: 46711939", "Adresse: Porskærvej 28, 8420 Knebel, Danmark", "E-mail: hello@refuge61.com", "Telefon: +45 20 87 03 42"] },
         { kind: "p", text: "Version: 17. august 2026" },
       ],
     },
